@@ -1,0 +1,284 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{fullpage}
+%\usepackage{titling}
+
+
+
+\begin{document}
+
+%\author{Thomas McClintock}
+%\title{A Detailed Investigation of the Physics of Cosmic-ray Injection and Propagation in the Fermi Bubbles}
+%\maketitle
+%\thispagestyle{empty}
+%\pagestyle{empty}
+\begingroup
+  \centering
+  \LARGE A Detailed Investigation of the Physics of Cosmic-ray Injection and Propagation in the Fermi Bubbles\\[.5em]
+  \large Thomas McClintock\\\par
+\endgroup
+\noindent
+\textbf{Introduction}
+
+Instruments have been scanning the Milky Way over many wavelengths for decades in order to learn more about its structure.
+In the past five years, \textit{Fermi}-LAT all-sky observations in the 20 MeV to 300 GeV range revealed two $\gamma$-ray emission regions extending $\sim$10 kpc above and below the Galactic plane.
+These so called ``Fermi Bubbles'' have also been found in the WMAP/\textit{Planck} data and correspond to X-ray structures seen by ROSAT.
+%The broadband characteristics of the Bubbles mean that their study represents a coalition of numerous missions.
+%Therefore, my proposed research will compare soft data from numerical simulation with a synthesis of observational data from NASA's \textit{Fermi} mission and ESA's \textit{Planck} satellite,
+%in addition to archival ROSAT measurements and ground-based observations made with $\gamma$-ray and radio telescopes.
+The broadband characteristics of the Bubbles mean that their study requires a synthesis of data from numerous missions.
+Therefore, my proposed research will compare soft data from numerical simulation with observational data from NASA's \textit{Fermi}, WMAP and ROSAT, in addition to ESA's \textit{Planck} satellite.
+Accomplishing this goal will require both theoretical work to develop a method of simulating particle accleration and transport as well as careful data analysis in order to evaluate various models that attempt to describe the physical processes that led to the formation of the Bubbles.
+Results gathered at all stages of my project will contribute to NASA's goal of determining the origin of physical processes within our Galaxy, as outlined in the 2011 Science Plan.
+
+\begin{figure}[h!]
+  \centering
+  %\small
+  \includegraphics[width=0.6\textwidth]{bubbles4.jpg}
+  \caption{\textit{Left:} All-sky map showing the \textit{Fermi} image (blue) with the galactic haze (red and yellow) seen by \textit{Planck} extending from and around the Galactic center. The synchrotron radiation producing this haze has a harder spectrum than synchrotron emission seen elsewhere in the Galaxy. Physical processes that may be responsible for this include Galactic winds, tidally-disrupted stars, or even annihilation of anti-matter particles. (Image from ESA/Planck Collaboration and Su et al.) \textit{Right:} Schematic diagram showing the Fermi Bubbles above and below the plane of the Galaxy. (Image courtesy of NASA)}
+\end{figure}
+%\normalsize
+
+The fact that the Bubbles are seen in multiple wavelengths suggests inverse-Compton scattering of ambient low-energy photons with high-energy electrons. %, however this has yet to be determined.
+The Bubble ($\sim$ 1 -- 100 GeV) $\gamma$-rays seen by \textit{Fermi} may even be produced from the same electrons responsible for the radio synchrotron emissions seen by WMAP (Dobler et al. 2010).
+Additionally, the fact that the Fermi Bubbles appear to be more or less symmetric across the Galactic plane, and centered on the nucleus, suggests that the Bubbles and their $\gamma$-ray spectrum may have something to do with the Galactic center (GC) itself.
+For this to be the case, there must be a mechanism for acceleration and transport of these particles to the Bubble boundaries above and below the plane. 
+At the moment, however, there is no consensus as to what this mechanism is or what type of particle is actually being transported.
+Some models propose the injection of cosmic-ray protons either by diffusion or advection where they suffer energy losses, while others support a leptonic model in which electrons are accelerated at the boundaries of and/or within the Bubbles.
+Determining the origin of the Fermi Bubbles will provide insight into how particles are produced, acclerated, and transported at and around the GC, as well as the properties of the interstellar medium (ISM) that must be traversed as particles propagate away from their sources.
+
+%SENTENCE ABOUT THE NASA MISSION
+
+%Determining the origin of the Fermi Bubbles will not only provide insight into how particles are produced at the Galactic center (GC), 
+%but will also reveal the properties of the interstellar medium (ISM) that must be traversed as particles propagate away from their sources.
+
+Currently, there exist four models that attempt to explain how the highly relativistic particles reach the edge of the Bubbles.
+The hadronic model put forward by Thoudam (2013) relies on the diffusion of cosmic-ray protons into the Bubble regions.
+This is similar to the scenario proposed by Crocker \& Aharonian (2011) where cosmic-rays are advected into the Bubbles from stellar winds caused by star formation at the GC.
+%Instead of relying on the diffusion of cosmic-ray, the models suggested by Mertsch \& Sarkar (2011) and Cheng et al. (2011) rely on ambient electrons.
+Mertsch \& Sarkar (2011) and Cheng et al.\ (2011) both suggest leptonic models that instead rely on ambient, cosmic-ray electrons.
+In the former, electrons on the high-energy tail of the Maxwell-Botlzmann distribution representing the plasma within the Bubbles are accelerated by a single shock front, seen by ROSAT, near the Bubbles' surface.
+This shock is the remnant of a jet from the GC (now in a quiescent state) that was active a few million years ago.
+On the other hand, Cheng et al. (2011) hypothesize that hundreds of shocks within the Bubble region accelerate electrons to $\sim$TeV energies.
+Identifying one or more processes that contribute to the formation of the Fermi Bubbles will allow the observation of these structures to become a tool for studying the GC and ISM.
+%In order to do so I will have to compare predictions from each of these models to observation. % discussed above.
+Doing so will require comparing predictions from each of these models to observation.
+
+These disparate and distinct scenarios each rely on mechanisms that are not yet fully understood, or rely on an incomplete knowledge of the hot, magnetic, and tenuous medium within the Fermi Bubbles. 
+I propose to study, using numerical simulation, a unifying physical feature of all these models -- the acceleration and propagation of relativistic particles. 
+%Upon completion of my project I will be able to compare the observations of the Bubbles to predictions by each model.
+Thus, the main focus of my project will be to compare the predictions made by each model to the observations of the Bubbles.
+These comparisons will include morphological features, such as the limb brightened edge and shape of the emission region, energy spectra seen by \textit{Fermi} and ROSAT, and synchrotron fluxes from WMAP and \textit{Planck}.
+%In this regard, the proposed investigation not only enhances the scientific return on the data gathered by \textit{Fermi}, but data from other missions as well.
+In this regard, the proposed investigation enhances the scientific return on not only the data gathered by \textit{Fermi}, but data from other missions as well.
+
+\vspace{10pt}
+\noindent
+\textbf{Proposed Research}
+
+The Fermi Bubbles are likely to offer insight into the inner workings of the Galactic center, in addition to providing a backdrop that allows observers a chance to investigate Galactic media and cosmic-rays. 
+A key feature of my project is that I will not use ``standard'' techniques, such as quasi-linear theory or the diffusion equation. 
+Instead, by determining the trajectory of particles through the Bubble medium directly, I avoid the limitations of unknowns inherent in those techniques. 
+For instance, Crocker \& Aharonian (2011) note that they have approximately one order of magnitude of uncertainty in the value of the diffusion coefficient used, %continue next line
+while in Thoudam (2013) a value of the diffusion coefficient (which can only be estimated) accurate to two significant figures is required for the model to be correct.
+Indeed, as seen in Figure 1 of Thoudam's paper, the distribution of cosmic-rays inside the Bubbles can change by many orders of magnitude if the diffusion coefficient is changed only slightly.
+
+Simply put, there is currently no easy way around the uncertainties in standard techniques aside from choosing values that allow a model to explain the data.
+My approach will be novel in that it will require no prior knowledge of diffusion coefficients, and will instead calculate the trajectory of high-energy particles individually for each model.
+
+%CLARIFY NUMERICAL MODELS VS FB MODELS
+\textit{Stage 1} The first step of this project will be to implement a numerical model for high-energy particle transport.
+Similar techniques have already been used in other contexts (see e.g., Fatuzzo \& Melia 2012a, 2012b). 
+In constructing my simulation I will represent a turbulent magnetic field using the formalism developed by Giacalone \& Jokipii (1994).
+The intensity of magnetic fluctuations in the turbulent environment of the Galactic medium is typically given by a power-law spectrum.
+These fluctuations, generated in the interstellar medium (ISM) by supernova remnants and stellar-wind collisions, are time dependent, and so Faraday's Law %continue next line
+is necessary to account for the fluctuating electric fields that must also be present.
+Furthermore, the medium is considered to be nonviscous and perfectly conducting, allowing for the use of linear magnetohydrodynamic theory to establish the turbulent component.
+In the linear regime there exist Alfv\'en, fast, and slow waves. 
+As in O'Sullivan et al. (2009), I consider only Alfv\'en waves for which the turbulent magnetic field may be written as a sum of $N$ randomly directed waves
+\begin{equation}
+\delta\vec{B} = \sum_{n=1}^{N}\vec{A}_ne^{i(\vec{k}_n\cdot\vec{r}-w_nt+\beta_n)}
+\end{equation}
+where $k_1 = k_{min} = 2\pi/\lambda_{max}$ and $k_N = k_{max} = 2\pi/\lambda_{min}$ are, respectively, the wavenumbers corresponding to the maximum and minimum wavelengths associated with the turbulent magnetic field.
+The direction of each propagation vector $\vec{k}_n$ is set through a random choice of polar angles $\theta_n$ and $\phi_n$, and the phase of each term is set through a random choice of $\beta_n$.
+The medium is also threaded by a static magnetic field given by $\vec{B}_0 = B_0\hat{z}$.
+With the magnetic and electric fields I can calculate the particle trajectory using the Lorentz force equation
+\begin{equation}
+\frac{d}{dt}(\gamma m\vec{v})=e\left[{\delta\vec{E}+\frac{\vec{v}\times\vec{B}}{c}}\right]\text{, with }\vec{B}=\vec{B}_0+\delta\vec{B}\text{,}
+\end{equation}
+to determine the motion of a relativistic charged particle that has a Lorentz factor $\gamma$. 
+%The particle trajectories describe the predicted morphology for the particular model in consideration, and the energy spectrum of the particles can be compared to the observed broadband data.
+I can then derive the particle distribution and its energy spectrum from these trajectories, which can be used to make various comparison with observations.
+Specifically, I will look at the shape of the emission region, the projected emissivity, and the photon flux density spectrum.
+
+All observations of the Bubble regions can potentially be benefitial, but my project will only utilize images where Bubble features have been highlighted.
+Su et al. (2010) has provided maps of the $\gamma$-ray emissions seen by \textit{Fermi} in the energy range of 0.5 GeV to 53.3 GeV where the Bubbles are clearly visible.
+%Using these maps I can compute the log likelihood that the particle distribution for a given model fits the data well.
+I can compute the log likelihood that these maps fit the particle distribution for a given model.
+Since these maps are based on intensity per pixel, I will have to pixelate the predicted data accordingly.
+In addition to the maps, Su et al. also generated templates for the projected emissivity seen by \textit{Fermi}, WMAP, and ROSAT.
+Again, I will be able to calculate the log likelihood that these templates fit the projected emissivity seen at Earth for a given model.
+An added benefit to using these images is that Su et al. has already filtered off radiation due to $\pi^0$ decay, extraneous inverse Compton scattering, and bremsstrahlung (seen at $\sim$1 GeV, $\sim$50 GeV, and $<$1 GeV, respectively), all of which obscure the Bubble features.
+%I will take two approaches to compare the photon flux density seen by observation and the various models.
+%I will take two approaches to compare the observed and simulated photon flux density.
+%First, I will use a chi-squared test to compare the surface-integrated theoretical spectrum with the corresponding $\gamma$-ray (Su et al. 2010) and X-ray (Snowden et al. 1997) measurements.
+%This will allow me to see how well the soft data from the models fit the observations.
+I will compare the observed and simulated spatially dependent photon spectra using chi-squared minimization and maximization of the likelihood function for all the available parameters to examine the quality of the theoretical fits to the $\gamma$-ray (Su et al. 2010) and X-ray (Snowden et al. 1997) measurements.
+I can do the same for the assumed spectrum of the WMAP/\textit{Planck} haze (Dobler et al. 2008) for synchrotron flux.
+%Second, I will characterize the surface brightness of the Bubbles by summing the number of particles in a  given energy range found within a strip of Galactic longitude.
+%Second, I will find the maximum likelihood that the measured intensity averaged over a strip of Galactic longitude matches observations of the Bubbles.
+%By calculating this as a function of latitude, I can simultaneously test the shape and spectrum of the Bubbles for each model compared to observations in $\gamma$-rays and X-rays.
+I will also use this approach to analyze the measured intensity averaged over a strip of Galactic longitude.
+Since this will be a funciton of latitude, I will simultaneously test the shape and spectrum of the Bubbles for each model.
+I do not have to reconcile measurements from different instruments made with different field of views since all images are all-sky.
+%In addition, in order to match the energy resolutions in the observational data I will have to bin the data in the model images.
+In addition, the fact that measurements of the Bubbles were not made contemporaneously is not a problem since there has been no observable change in their structure.
+Furthermore, it should be noted that I will not have to merge any data sets, since there is no overlap of their energy ranges.
+%Finally, I should note that it is not a problem that measurements of the Bubble regions made with various instruments were not contemporaneous, since the structures have not changed much between observing periods.
+%Second, I will take the surface brightness for a given energy band taken over a strip of longitude as a function of Galactic latitude in Snowden et al. (1997) and Su et al. (2010) and c
+%In order to compare the photon flux density seen at Earth I will take the surface brightness averaged over a band of longitude seen by each mission (Su et al. 2010 for \textit{Fermi}; Dobler et al. 1997 for ROSAT, and 
+%The ROSAT data in Snowden et al. (1997) revealed a limb brightened edge that corresponds to the edges of the Bubbles, caused by emission from high energy partic
+%As a specific example, I will take the predicted intensity maps of $\gamma$-rays of a given energy seen at Earth for some model and fit this, by calculating the log likelihood, to the maps of the Bubbles generated by \textit{Fermi} (Su et al. 2010).
+%Once my algorithm is complete, I will undertake to compare the predictions of each model, generated with my simulation, to the observed data from \textit{Fermi}, \textit{Planck}, WMAP, and ROSAT.
+I will make these comparisons for each of the four different models of the Fermi Bubbles discussed below.
+The models will be investigated in order of (anticipated) increasing complexity.
+
+
+\textit{Stage 2} The first model (Thoudam 2013) I will investigate is minimalist compared to the others, because it assumes that the Bubbles themselves do not contain sources that produce the relativistic particles.
+Rather, the (presumably) known population of cosmic-rays that pervade the Galaxy diffuse into the Bubble regions, where they suffer losses due to inelastic collisions with the ambient plasma.
+Thoudam demonstrated that cosmic-rays could provide enough power to the Bubbles to match the $\gamma$-ray luminosity observed by \textit{Fermi}, but this is not enough to determine if his model is correct.
+The turbulent fields in the Bubbles prevent the cosmic-rays from penetrating towards the center, which results in the emission of more $\gamma$-rays closer towards to Bubbles' edge.
+If one assumes a steady state, then standard techniques require knowing the diffusion rate within the Bubbles; the diffusion coefficients are unknown, so a diffusion rate can only be estimated.
+My simulation allows for a determination of the particle distribution and associated energy spectra directly, as described above.
+%My simulation allows for the calculation of this diffusion rate directly.
+%Thoudam's hypothesis states that the cosmic-rays provide enough power to the Bubbles, but without numerical simulation it cannot be confirmed whether the spatial distribution of the cosmic-rays, or their spectrum, matches the observed broadband data.
+%Since Thoudam's model is hadronic, I will have to calculate the particle cascades between the cosmic-ray protons and the ambient medium.
+%These cascade calculations will determine whether 
+%Once I obtain the spatial and energy distributions of the cosmic-rays inside the Bubbles, I can calculate the particle cascades between these particles and the ambient medium.
+%The cascade calculations will produce broadband data from $\gamma$-rays to X-rays and IR, as well as microwave haze detected by WMAP and \textit{Planck}.
+Only at this point will it be possible to fully evaluate Thoudam's scenario by considering all available data, and not just the observed luminosity.
+%Only at this point will it be possible to fully evaluate Thoudam's scenario by considering \textit{all} available data (\textit{Fermi}, ROSAT, WMAP, and \textit{Planck}) when comparing prediction of the model to observations.
+
+\textit{Stage 3} The next two models I will investigate are leptonic, in that they rely on the use of shocks to acclerate electrons within the Bubbles.
+Mertsch \& Sarkar (2011) propose that the Bubble structures appear due to the supermassive black hole emanating a jet that was active a few million years ago.
+ROSAT data observed a limb-brightened shell (Snowden et al. 1997), characteristic of a shock front, at the same location as the Bubble edges seen by \textit{Fermi}.
+This shock front produces turbulence in its wake as it expands, accelerating electrons due to the changing electromagnetic fields.
+%These electrons respond by synchrotron radiating, producing the WMAP/\textit{Planck} haze, and travel outward from the center of the Bubbles.
+These electrons travel outward from the center of the Bubbles while they synchrotron radiate, producing the WMAP/\textit{Planck} haze.
+Once these particles reach the Bubble edges they inverse-Compton scatter with ambient radiation, emitting $\gamma$-rays detected by \textit{Fermi} and ROSAT.
+Since calculations carried out thus far have used the Fokker-Planck equation, which relies on the unknown diffusion coefficients described above, the correctness of this model cannot be ascertained without simulating particle trajectories.
+%In a similar scenario, Cheng et al. (2011) suggest that periodic star capture produces a very hot plasma that is injected into the Galactic halo.
+%This injection powers hundreds of shocks within the Bubble cavities, as opposed to one shock at the edge.
+%These shocks accelerate electrons to $\sim$TeV energies, which then radiate in the radio via
+%
+%As the shell expands, the left behind electrons (now with a lower energy) radiate via synchrotron and produce the WMAP/\textit{Planck} haze.
+%The next two models I will investigate are leptonic, in that they rely on the use of shocks to accelerate electrons that convect within the Bubbles. 
+%Mertsch \& Sarkar (2011) propose that the Bubble structures appear due to the supermassive black hole emanating a jet that was active a few million years ago. %before falling into a quiescent state
+%Turbulence produced at the termination shock of this jet then accelerates high-energy electrons already present in the ambient hot plasma inside the Bubbles.
+%Calculations carried out thus far have used the Fokker-Planck equation, which relies on the unknown diffusion coefficients described above.
+In a similar scenario, Cheng et al. (2011) suggest that periodic star capture produces a very hot plasma that is injected into the Galactic halo.
+This injection powers a sequence of hundreds of shocks within the Bubble cavities, accelerating electrons to $\sim$TeV energies, which then radiate in the radio via synchrotron and $\gamma$-rays via inverse-Compton scattering with relic and galactic soft photons. 
+Already, the validity of this model is uncertain since one would expect additional shocks to be manifested in the ROSAT data.
+Furthermore, Cheng et al. characterized the acceleration experienced by each particle using the ratio of the distance between the shocks to the diffusion length, which depends on the chosen diffusion coefficients, resulting in an inherent uncertainty.
+Nevertheless, my simulation will be able to accomodate the physical processes in the this scenario by directly accounting for shock propagation in a stratified medium (see, e.g., Kompaneets 1960 and Bisnovatyi-Kogan \& Silich 1995).
+
+\textit{Stage 4} The Crocker \& Aharonian (2011) model will be the last that I investigate.
+Here, Galactic winds associated with star-formation at the GC advect ``old'' relic cosmic-rays into the Bubbles.
+Once trapped inside, these particles, which are predominantly protons, cascade via \textit{pp} collisions releasing $\gamma$-rays and X-rays seen by \textit{Fermi} and ROSAT, as well as electrons, positrons, and neutrinos.
+Ambient magnetic fields accelerate the electrons and positrons, which then give off synchrotron radiation, resulting in the mm-haze detected by WMAP and \textit{Planck}.
+This scenario is very similar to that described in \textit{Stage 1}, but here the cosmic-rays are advected into the Bubbles from the GC, rather than diffusing inward from all directions.
+This represents the most complex model of the four, since I will have to calculate the particle trajectories in a frame \textit{comoving} with the wind, and only afterwards account for the wind velocity.
+%This represents the most complex model of the four, since the particle trajectories must be calculated in a frame \textit{comoving} with the Galactic wind, which is itself moving within the Bubbles.
+
+\vspace{10pt}
+\noindent
+\textbf{Summary}
+
+How and where cosmic-rays are produced and how they diffuse through various turbulent media represent fundamental problems in astrophysics.
+An analysis of the Fermi Bubbles strengthens our theoretical understanding of high-energy processes in the Milky Way and beyond, and helps with the successful interpretation of space-based and ground-based observations.
+%The simulation of the four models for the Bubbles will not stand on its own, but will instead be informed by the data as we begin simulations.
+The theoretical calculation performed in my simulation will necessarily be informed by the data from NASA-sponsored missions and other investigations.
+Indeed, without them it is impossible to characterize each of the cosmic-ray sources described in the four models I will test.
+Futhermore, once I obtain spatial distributions and energy spectrums of particles for each model, I will again use data from these missions in order to make comparisons between simulation and observation.
+In this sense, my project represents a broad and novel use of the data available in order to examine the origin of the Fermi Bubbles.
+Without simulating particle trajectories directly, as I propose, one cannot draw comparisons between current models, leaving the physical processes in our Galaxy a mystery.
+%While each model has arguments in its favor, comparisons between these theories cannot be drawn without simulating particle trajectories, which I propose to do.
+%Critically, without observational data it is impossible to determine the strength of cosmic-ray sources with any more certainty than the diffusion rates that I avoid using.
+%I will have determined which (if any) scenarios, on their own or in combination, correctly describes the mechanisms responsible for creating the Fermi Bubbles.
+
+\textit{Future Prospects} My project will not only help determine the origin of the Fermi Bubbles, but it will also impact astrophysics more generally.
+By understanding the processes that create the Bubbles, observations of these structures become a tool for studying cosmic-ray sources within the Galaxy.
+%By demystifying the Fermi Bubbles, observations of these structures becomes a tool for studying the mechanisms at the GC.
+%Notes:
+%Once we know the mechanisms behind the production of the Fermi Bubbles there is suddenly a role reversal: 
+%the FBs go from being a mysterious structure to a tool that can help study the source of cosmic-rays in the Galaxy.
+Therefore, my project enhances the scientific return of NASA sponsored missions operating at wavelengths sensitive to the Bubbles, which is very broad, by allowing additional conclusions to be drawn from their data.
+%This is not only true for current missions, but also for any future missions that might allow for greater spatial and/or temporal resolution.
+This not only applies to the missions that directly inform my investigation, including \textit{Fermi}, ROSAT, \textit{Planck}, and WMAP, but other (current and future) missions as well.
+For instance, HESS in Namibia has yet to make an analysis of Galactic cosmic-rays, instead treating all such particles as background.
+By gaining a better understanding of the acceleration of particles in the Galaxy, this data need not be neglected.
+In addition, my simulation will be able to predict broadband data in energy ranges, such as $\sim$TeV $\gamma$-rays, not currently observed by NASA, and will thus provide interesting targets for future missions.
+If no viable `astrophysical' model can account for the Bubble $\gamma$-rays, then the outcome of my work may even suggest dark matter condensation at the GC as a potential source of cosmic-rays,
+which represents (perhaps) one of the most tantalizing scientific questions we have.
+
+%HAVE TO REWRITE THIS AND FUTURE PROSPECTS IN ORDER TO SOUND MORE APPEALING
+%To summarize, the main goal of my proposal is to determine how the Fermi Bubbles are formed by studying the physics of acceleration and propagation of relativistic particles.
+%My simulation will track the trajectory of particles originating from various sources according to the model in consideration.
+%If the particle trajectories from a particular model match the morphological features of the Bubbles, and their energy spectrum matches the observed broadband spectra, then that model can be considered viable.
+
+%\textit{Future Prospects} One possible outcome of this project could be that none of the proposed models are validated. 
+%In this case, dark matter interaction would remain as the only candidate that may explain the Fermi Bubbles, and I will propose a follow-up investigation focusing on dark matter exclusively.
+%On the other hand, if any of the models correctly describe the mechanisms that lead to the Bubbles, then I will have found a new way to investigate the Galactic center and/or the outer Galaxy. 
+%Furthermore my results will not only establish the fundamental physical mechanisms that give rise to the Fermi Bubbles, but my simulation will be able to be reapplied to other sources of high-energy particles that give rise to broadband structure in our Galaxy such as supernovae, pulsars, and binary star systems, in addition to providing calculated diffusion rates in the Galactic medium.
+
+\vspace{10pt}
+%\newpage
+\noindent
+\textbf{References}
+
+\small
+\begin{multicols}{2}
+  \noindent
+  Bisnovatyi-Kogan, G.S., \& Silich, S.A. 1995, RvMP, 67, 661\\
+  Cheng, K.-S., et al. 2011, ApJ, 731, L17\\
+  Crocker R.M., \& Aharonian, F. 2011, PRL, 106, 1102\\
+  Dobler, G. et al. 2010, ApJ, 717, 825\\
+  Dobler, G. et al. 2008, ApJ, 680, 1222\\
+  Fatuzzo, M., \& Melia, F. 2012a, ApJLett, 757, L16\\
+  Fatuzzo, M., \& Melia, F. 2012b, ApJ, 750, 21\\
+  Giacalone, J., \& Jokipii J.R. 1994, ApJLett, 430, L137\\
+  Kompaneets, A.S. 1960, SPhD, 5, 46\\
+  Mertsch, P., \& Sarkar, S. 2011, PRL, 107, 1101\\
+  O'Sullivan, S., Revile, B., Taylor, A.M. 2009, MNRAS, 400, 248\\
+  Snowden et al. 1997, ApJ, 485, 125\\
+  Su, M., et al. 2010, ApJ, 724, 1044\\
+  Thoudam, S. 2013, ApJLett, 778, L20
+\end{multicols}
+\vspace{10pt}
+\noindent
+\normalsize
+
+\noindent
+\textbf{Schedule}
+\begin{list}{\quad}{}
+\item \textbf{Summer \& Fall 2014} Implement the numerical model and complete correctness testing. See \textit{Stage 1} above.
+
+\item \textbf{Spring 2015} Test the hadronic diffusion model. At the conclusion of this phase I will report my results as well as a description of the algorithm in a paper submitted to the Astrophysical Journal.
+See \textit{Stage 2} above.
+
+\item \textbf{Summer 2015 through Summer 2016} % Test the Mertsch \& Sarkar and the Cheng et al. models. 
+The next models to be tested will be the formation of the Bubbles through accelerated electrons by shocks at the Bubbles’ surface and within the Bubbles themselves.
+First, I will investigate the simpler case of a single shock at the Bubble surface, and then include the possibility of hundreds of shocks caused by the tidal disruption of stars.
+Little numerical work has been performed so far in the multi-shock pictures, so I will be breaking new ground with these tests in a broader sense.
+See \textit{Stage 3} above.
+
+\item \textbf{Fall 2016 \& Spring 2017} %Test the Crocker \& Aharonian model. Remaining results (obtained after \textit{Stage 2}) will be reported in a paper submitted to the Astrophysical Journal.
+The final part of the project will be to simulate the advection of cosmic-ray protons by Galactic stellar winds into the Fermi Bubbles.
+At the conclusion of this final phase I will report my remaining results (obtained after \textit{Stage 2}) in a paper submitted to the Astrophysical Journal before writing up and defending my thesis.
+See \textit{Stage 4}.
+\end{list}
+
+\end{document}
