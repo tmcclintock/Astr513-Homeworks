@@ -42,7 +42,7 @@ MT19937 is not particularly space efficient. The generator state takes up 2500 b
 Although it might not be the most efficient PRNG, MT19937 is extremely portable. It comes default in numerous general purpose, programming languages and softwares such as C++, Python, R, MATLAB, and IDL. In addition, it is available in a 64-bit variety. MT19937 is a reliable PRNG independent of the compiler or system being used.  
 
 \section{Designing surveys}
-We are given a prior probability from the rate of detecting planets of $1-2 R_{\oplus}$ around solar type stars from Kepler, and are told to assume this rate has been measured to high accuracy as being 10\%. We are tasked with determining the number of solar type stars we would need to observe to find at least 30 $1-2 R_{\oplus}$ planets in a similar survey observing a different area of the sky with a 90\% and 99\% likelihood. To do this, we will want to make of the binomial distribution,
+We are given a prior probability from the rate of detecting planets of $1-2 R_{\oplus}$ around solar type stars from Kepler, and are told to assume this rate has been measured to high accuracy as being 10\%. We are tasked with determining the number of solar type stars we would need to observe to find at least 30 $1-2 R_{\oplus}$ planets in a similar survey observing a different area of the sky with a 90\% and 99\% likelihood. To do this, we will want to make use of the binomial distribution,
 \begin{equation*}
   P(n, \rho | N) = \left(N \choose n\right) \rho^n \left(1 - \rho\right)^{N - n},
 \end{equation*}
