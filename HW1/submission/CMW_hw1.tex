@@ -42,6 +42,20 @@ MT19937 is not particularly space efficient. The generator state takes up 2500 b
 Although it might not be the most efficient PRNG, MT19937 is extremely portable. It comes default in numerous general purpose, programming languages and softwares such as C++, Python, R, MATLAB, and IDL. In addition, it is available in a 64-bit variety. MT19937 is a reliable PRNG independent of the compiler or system being used.  
 
 \section{Designing surveys}
+We are given a prior probability from the rate of detecting planets of $1-2 R_{\oplus}$ around solar type stars from Kepler, and are told to assume this rate has been measured to high accuracy as being 10\%. We are tasked with determining the number of solar type stars we would need to observe to find at least 30 $1-2 R_{\oplus}$ planets in a similar survey observing a different area of the sky with a 90\% and 99\% likelihood. To do this, we will want to make of the binomial distribution,
+\begin{equation*}
+  P(n, \rho | N) = \left(N \choose n\right) \rho^n \left(1 - \rho\right)^{N - n},
+\end{equation*}
+where $n$ is the number of successes, $\rho$ is the prior likelihood of obtaining a success, and $N$ is the number of independent observations. We will want to solve for $N$ given a probability of 0.9 or 0.99, but there is a modification that needs to be made because we want the probability not of finding exactly 30 of theses planets, but 30 or more of them. There are two ways to calculate this probability, either by adding the probabilities of finding $n \in {[30, \infty]}$ planets, or by adding the probabilities of finding $n \in {[0, 29)}$ planets and subtracting this sum from 1. Computationally, the latter of these is the most logical, so our probability will actually be
+  \begin{equation*}
+    P(n \ge 30, \rho | N) = \sum_{m = 0}^{29} \left(N \choose m\right) \rho^m \left(1 - \rho\right)^{N - m},
+  \end{equation*}
+  and when solving we will use the substitution that $\rho = 0.1$ and $P(n \ge 30, \rho | N) = 0.9$ or $0.99$.\\\\
+Using a false position method root finding algorithm in Python, we were able to find the values of $N$ that would satisfy the above equation for our desired likelihoods. These values are
+\begin{description}
+  \item [\normalfont a)]$N = 368$ for a 90\% likelihood
+  \item [\normalfont b)]$N = 435$ for a 99\% likelihood
+\end{description}
 
 \section{Blackbody Distribution}
 \subsection{}
@@ -90,21 +104,23 @@ with the area of the bins normalized to $1$.
   \includegraphics[]{HW1_3_6_normalized.png}
 \end{figure*}
 \newpage
+\noindent
 If we simply loop over the energy domain and plot the fraction of accepted
 photons in that bin then we recover $f'$.
 \begin{figure*}[!h]
   \includegraphics[]{HW1_3_6.png}
 \end{figure*}
+
 \newpage
 
 \section*{References}
+
 \begin{enumerate}
-  \item   Matsumoto, Makoto, and Takuji Nishimura. "Mersenne Twister: A 623-dimensionally Equidistributed Uniform Pseudo-random Number Generator." Transactions on Modeling and Computer Simulation. TOMACS ACM Transactions on Modeling and Computer Simulation 8.1 (1998): 3-30.
+  \item Matsumoto, Makoto, and Takuji Nishimura. "Mersenne Twister: A 623-dimensionally Equidistributed Uniform Pseudo-random Number Generator." Transactions on Modeling and Computer Simulation. TOMACS ACM Transactions on Modeling and Computer Simulation 8.1 (1998): 3-30.
   \item Tian, Xiang, and Khaled Benkrid. "Mersenne Twister Random Number Generation on FPGA, CPU and GPU." 2009 NASA/ESA Conference on Adaptive Hardware and Systems (2009): Web.
   \item Matsumoto, Makoto. "Mersenne Twister with Improved Initialization." Hiroshima University. Web. http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/MT2002/emt19937ar.html.
-  \item "Pseudo-Random Number Generator." Boost C++ Libraries. Web. \\ http://www.boost.org/doc/libs/1461/doc/html/boostrandom/reference.html.
-  \item "Performance." Boost C++ Libraries. Web. \\ http://www.boost.org/doc/libs/1460/doc/html/boostrandom/performance.html. 
-  
+  \item "Pseudo-Random Number Generator." Boost C++ Libraries. Web. \\ http://www.boost.org/doc/libs/1{\_}46{\_}1/doc/html/boost{\_}random/reference.html.
+  \item "Performance." Boost C++ Libraries. Web. \\ http://www.boost.org/doc/libs/1{\_}46{\_}0/doc/html/boost{\_}random/performance.html.   
 \end{enumerate}
 
 \end{document}
