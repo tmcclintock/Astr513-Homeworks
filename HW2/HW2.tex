@@ -105,6 +105,63 @@
 
 \section{Part C}
 \label{sec:partC}
+The analytic approach to this problem involves a Jacobian transformation from $(R,h,g)$ to $(u_x,u_y,g)$. To do so, we invert 
+\[ h=\frac{u_y^2}{2g} \ \ \textrm{and} 
+\ \ R=\frac{2u_xu_y}{g} \] to give 
+\[ u_x= \sqrt{2gh} \ \ \textrm{and} 
+\ \ u_y=\sqrt{\frac{g}{8h}} .\]
+Of course, $g=g$. The probability distribution is 
+\begin{equation}
+  P(R,h,g)dRdhdg=P(u_x,u_y,g)du_xdu_ydg.
+\end{equation}
+It can be written in terms of three Gaussian functions 
+\begin{equation}
+  P(R,h,g)=G(R,R_0,\sigma_R)G(h,h_0,\sigma_h)G(g,g_0,\sigma_g).
+\end{equation}
+The Jacobian transformation of the probability distribution is 
+\begin{equation}
+  P(u_x,u_y,g) = G(R,R_0,\sigma_R)G(h,h_0,\sigma_h)G(g,g_0,\sigma_g) J\bigg(\frac{R,h,g}{u_x,u_y,g}\bigg)
+\end{equation}
+where $J$ is the Jacobian. In this transformation from 3 variables to 3 inferences, 
+\begin{equation}J=
+\begin{vmatrix}
+  \frac{\partial R}{\partial u_x} & \frac{\partial R}{\partial u_y} & \frac{\partial R}{\partial g}\\
+  \frac{\partial h}{\partial u_x} & \frac{\partial h}{\partial u_y} & \frac{\partial h}{\partial g}\\
+  \frac{\partial g}{\partial u_x} & \frac{\partial g}{\partial u_y} & \frac{\partial g}{\partial g}\\
+\end{vmatrix}= \frac{2u_y^2}{g^2}. 
+\end{equation}
+With the Jacobian, 
+\begin{eqnarray}\nonumber
+P(u_x,u_y,g)&=& \frac{u_y^2}{\sqrt{2}\pi^{3/2} \sigma_R \sigma_h \sigma_g g^2}\textnormal{exp}\bigg[{\frac {-(\frac{2u_yu_x}{g}-R_0)^2}{2 {\sigma_R} ^2}}\bigg]\\
+&& \textnormal{exp}\bigg[{\frac {-(\frac{u_y^2}{2g}-h_0)^2}{2 {\sigma_h} ^2}}\bigg]\textnormal{exp}\bigg[{\frac {-(g-g_0)^2}{2 {\sigma_g} ^2}}\bigg].
+\end{eqnarray}
+In order to obtain the probability distribution of $u_y$, we need to marginalize Equation 9 over $u_x$ and $g$. Thus, 
+\begin{eqnarray}\nonumber
+P(u_y)&=& \frac{u_y^2}{\sqrt{2}\pi^{3/2} \sigma_R \sigma_h \sigma_g}\textnormal{exp}\bigg[{\frac {-(\frac{u_y^2}{2g}-h_0)^2}{2 {\sigma_h} ^2}}\bigg]\\
+&&\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\textnormal{exp}\bigg[{\frac {-(\frac{2u_yu_x}{g}-R_0)^2}{2 {\sigma_R} ^2}}\bigg]\textnormal{exp}\bigg[{\frac {-(g-g_0)^2}{2 {\sigma_g} ^2}}\bigg]\frac{1}{g^2}du_xdg. 
+\end{eqnarray}
+In order to obtain the probability distribution of $u_x$, we need to marginalize Equation 9 over $u_y$ and $g$. Thus, 
+\begin{eqnarray}\nonumber
+P(u_x)&=& \frac{1}{\sqrt{2}\pi^{3/2}\sigma_R \sigma_h \sigma_g} \int_{-\infty}^{\infty}\int_{-\infty}^{\infty} \textnormal{exp}\bigg[{\frac {-(\frac{u_y^2}{2g}-h_0)^2}{2 {\sigma_h} ^2}}\bigg]\\
+&& \textnormal{exp}\bigg[{\frac {-(\frac{2u_yu_x}{g}-R_0)^2}{2 {\sigma_R} ^2}}\bigg]\ \textnormal{exp}\bigg[{\frac {-(g-g_0)^2}{2 {\sigma_g} ^2}}\bigg]\frac{u_y^2}{g^2}du_ydg. 
+\end{eqnarray}
+As seen in \autoref{fig:ux_analytic} and \autoref{fig:uy_analytic}, the shapes of the analytic probability distributions match the shapes of the probability distributions from Monte Carlo simulations. 
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[keepaspectratio]{ux_analytic.pdf}
+  \caption{The analytic, marginalized probability of $u_x$. The marginalization
+    over the other two parameters was done numerically.}
+  \label{fig:ux_analytic}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[keepaspectratio]{uy_analytic.pdf}
+  \caption{The analytic, marginalized probability of $u_y$. The marginalization
+    over the other two parameters was done numerically.}
+  \label{fig:uy_analytic}
+\end{figure}
 
 \section{Part D}
 \label{sec:partD}
@@ -141,10 +198,11 @@ framework we neglect the normalization terms anyway,
 which carry units with them.
 
 We can marginalize over any two parameters to acquire the third.
-See \autoref{sec:partE} for figures showing these distributions 
+See \autoref{fig:ux_bayesian}\autoref{fig:uy_bayesian} for figures showing these distributions 
 with no priors.
 
 \section{Part E}
+\label{sec:partE}
 We can also introduce logarithmic priors
 \begin{equation*}
   \label{eq:log_prior}
@@ -184,13 +242,5 @@ parameters.
     this exercise.}
   \label{fig:g_bayesian}
 \end{figure}
-
-
-
-
-
-\newpage
-
-\section*{References}
 
 \end{document}
