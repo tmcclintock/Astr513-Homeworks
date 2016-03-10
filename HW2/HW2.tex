@@ -93,19 +93,21 @@
   \end{equation}
  \end{subequations}
  
- \item Now we use Monte Carlo realizations of $R$, $g$, and $h$ assuming Gaussian uncertainties to find the distributions of $u_x$ and $u_y$. Using this method, we find that $u_x \approx 11.1\substack{+1.32 \\ -0.99}$ and $u_y \approx 4.43\substack{+0.42 \\ -0.46}$. So the means for $u_x$ and $u_y$ seem to agree with the error propagation method, but not the errors. The marginalized distributions for $u_x$ and $u_y$, as well as the distribution of $u_y$ vs $u_x$, can be seen in the corner plot in Fig ~\ref{fig:2.1b}.
+ \item Now we use Monte Carlo realizations of $R$, $g$, and $h$ assuming Gaussian uncertainties to find the distributions of $u_x$ and $u_y$. Using this method, we find that $u_x \approx 11.1\substack{+1.32 \\ -0.99}$ and $u_y \approx 4.43\substack{+0.42 \\ -0.46}$. So the means for $u_x$ and $u_y$ seem to agree with the error propagation method, but not the errors. The marginalized distributions for $u_x$ and $u_y$, as well as the distribution of $u_y$ vs $u_x$, can be seen in the corner plot in \autoref{fig:corner}.
  
  \begin{figure}[ht]
   \centering
   \includegraphics[keepaspectratio]{hw2_b_corner.pdf}
   \caption{The distribution of $u_y$ vs $u_x$ as well as the marginalized distributions for $u_x$ and $u_y$. The red line in the marginalized distributions shows the answer from the error propagation method, and the red point with error bars is the expected value and error from the error propagation method.}
-  \label{fig:2.1b}
+  \label{fig:corner}
  \end{figure}
 \end{enumerate}
 
 \section{Part C}
+\label{sec:partC}
 
 \section{Part D}
+\label{sec:partD}
 Bayes' Theorem says
 \begin{equation}
   P(A|B) = \frac{P(B|A)P(A)}{P(B)}
@@ -117,9 +119,75 @@ in the Bayesian approach precisely because you wish to be informed by the
 priors. In this part, we assume \textit{uniform} priors on our posterior
 parameters $u_x$, $u_y$ and $g$, and in addition to this there is no Jacobian 
 transformation. Thus we can write for the conditional probability
+\begin{align}
+  \label{eq:bayesian_conditional}
+  P_B(u_x,u_y,g|R,h,g) = & \frac{1}{(2\pi)^{3/2}\sigma_R\sigma_h\sigma_g} \exp\left(-\frac{(2u_xu_y/g - R_0)^2}{2\sigma_R^2}\right)\times \\ &\exp\left(-\frac{(u_y^2/2g-h_0)^2}{2\sigma_h^2}\right) \exp\left(-\frac{(g-g_0)^2}{2\sigma_g^2}\right)
+\end{align}
+where we have written $R$ and $h$ as functions of $u_x$, $u_y$ and $g$. Just as in class,
+this expression is missing the Jacobian term,
+$2u_y^2/g^2$, as calculated in \autoref{sec:partC}. Thus, if we assume flat priors
 \begin{equation}
-
+  \label{eq:priors_partD}
+  P_{pr}(u_x) = P_{pr}(u_y) = 1
 \end{equation}
+then the ratio of the two probabilities is simply this Jacobian
+\begin{equation}
+  \label{eq:prob_ratio}
+  \frac{P_f}{P_b} = \frac{2u_y^2}{g^2}.
+\end{equation}
+Interestingly, this ratio is not unitless, 
+but this is not an issue since in the Bayesian 
+framework we neglect the normalization terms anyway, 
+which carry units with them.
+
+We can marginalize over any two parameters to acquire the third.
+See \autoref{sec:partE} for figures showing these distributions 
+with no priors.
+
+\section{Part E}
+We can also introduce logarithmic priors
+\begin{equation*}
+  \label{eq:log_prior}
+  P_{pr}(X) \propto x^{-1}
+\end{equation*}
+on any of our parameters. The effect is to shift (sometimes slightly)
+the distributions down slightly. In the following three figures
+we plot the marginalized probability for each parameter with and 
+without a logarithmic prior. These probabilities were generated
+by performing a numerical integral over each of the marginalized
+parameters.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[keepaspectratio]{ux_bayesian.pdf}
+  \caption{The marginalized probability of $u_X$. The marginalization
+    over the other two parameters was done numerically.}
+  \label{fig:ux_bayesian}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[keepaspectratio]{uy_bayesian.pdf}
+  \caption{The marginalized probability of $u_y$. The marginalization
+    over the other two parameters was done numerically, however
+    one may perform the marginalization over $u_x$ analytically in
+    this exercise.}
+  \label{fig:uy_bayesian}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[keepaspectratio]{g_bayesian.pdf}
+  \caption{The marginalized probability of $g$. The marginalization
+    over the other two parameters was done numerically, however
+    one may perform the marginalization over $u_x$ analytically in
+    this exercise.}
+  \label{fig:g_bayesian}
+\end{figure}
+
+
+
+
 
 \newpage
 
