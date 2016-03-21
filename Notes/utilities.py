@@ -78,18 +78,22 @@ def conf_intervals(y,P,C0=0.683,k=1000):
 
 
 """
-Given a 2D histogram P with bins centered on (a,b),
+Given a 2D histogram P with bins centered on (a,b)
+in ab space,
 find the levels of P (Pjs) that contain some fraction of the total
-probability under them (Cjs). Then, find the values of P and (a,b) (P0 , (a0,b0))
-that contain C0 amount of probability within them.
+probability under them (Cjs). Then, find the values of P (P0)
+that contain C0 amount of probability above it.
 IN PROGRESS!!!!! - Tom 3/21/2016
 """
-def conf_intervals_2D(y,P,C0=0.683,k=1000):
+def conf_intervals_2D(a,b,P,C0=0.683,k=1000):
     #Step 1 find where the maximum value is
-    i_Pmax = np.argmax(P)
-    Pmax, y_Pmax, M  = P[i_Pmax],y[i_Pmax], len(y)
-    dy = (np.max(y)-np.min(y))/(M-1)
+    i_Pmax = np.unravel_index(np.argmax(P),np.shape(P)) #gives a 2D index
+    Pmax, a_Pmax, b_Pmax, Ma,Mb  = P[i_Pmax],a[i_Pmax[0]],b[i_Pmax[1]], len(a),len(b)
+    da = (np.max(a)-np.min(a))/(Ma-1)
+    db = (np.max(b)-np.min(b))/(Mb-1)
     
+    #GOT UP TO HERE
+
     #Step 2 grid P with K Points, j = 1...k
     #Step 3 find C_j, the integral over P(y)H[P(y)-Pj], i.e. the fraction
     #in the grid of P
