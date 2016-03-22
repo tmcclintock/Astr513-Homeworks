@@ -79,21 +79,17 @@ def conf_intervals(y,P,C0=0.683,k=1000):
 
 """
 Given a 2D histogram P with bins centered on (a,b)
-in ab space,
-find the levels of P (Pjs) that contain some fraction of the total
-probability under them (Cjs). Then, find the values of P (P0)
+in ab space, find the value of P (P0)
 that contain C0 amount of probability above it.
-IN PROGRESS!!!!! - Tom 3/21/2016
+IN PROGRESS!!!!! - Tom 3/22/2016
 """
-def conf_intervals_2D(a,b,P,C0=0.683,k=1000):
+def conf_2D_bound(a,b,P,C0=0.683,k=1000):
     #Step 1 find where the maximum value is
     i_Pmax = np.unravel_index(np.argmax(P),np.shape(P)) #gives a 2D index
     Pmax, a_Pmax, b_Pmax, Ma,Mb  = P[i_Pmax],a[i_Pmax[0]],b[i_Pmax[1]], len(a),len(b)
     da = (np.max(a)-np.min(a))/(Ma-1)
     db = (np.max(b)-np.min(b))/(Mb-1)
     
-    #GOT UP TO HERE
-
     #Step 2 grid P with K Points, j = 1...k
     #Step 3 find C_j, the integral over P(y)H[P(y)-Pj], i.e. the fraction
     #in the grid of P
@@ -103,14 +99,16 @@ def conf_intervals_2D(a,b,P,C0=0.683,k=1000):
         Pj = (j-1.0)/(k-1.0)*Pmax
         Pjs.append(Pj)
         Cj = 0
-        for i in range(2,M):
-            if P[i] > Pj:
-                Cj+=dy*P[i]
-            else:
-                Cj+=0
+        #This is now a 2D integral
+        for i in range(2,Ma):
+            for k in range(2,Mb):
+                if P[i][k] > Pj:
+                    Cj+=da*db*P[i][k]
+                else:
+                    Cj+=0
         Cjs.append(Cj)
 
-    #Step 4 scan through the Cjs and find j
+    #Step 4 scan through the Cjs and find j (the index above which Cj<C0)
     j = 0
     for i in range(len(Cjs)-1):
         if Cjs[i+1] < C0:
@@ -120,6 +118,8 @@ def conf_intervals_2D(a,b,P,C0=0.683,k=1000):
     #Step 5 interpolate for P at that point
     P0 = (Pjs[j+1]-Pjs[j])/(Cjs[j+1]-Cjs[j]) * (C0 - Cjs[j]) + Pjs[j]
     
+    #THIS MIGHT NOT BE POSSIBLE FOR 2D CONTOURS
+    """
     #Step 6 interpolate again to find i_left, i_right and y0_left and y0_right
     i_left,iIright = 0,0
     for l in range(len(P)-1):
@@ -132,9 +132,9 @@ def conf_intervals_2D(a,b,P,C0=0.683,k=1000):
             break
     y_left = (y[i_left+1]-y[i_left])/(P[i_left+1]-P[i_left])*(P0-P[i_left]) + y[i_left]
     y_right = (y[i_right+1]-y[i_right])/(P[i_right+1]-P[i_right])*(P0-P[i_right]) + y[i_right]
-
     """
-    We return the confidence interval edges in yleft,yright. The height of 
-    the histogram at that location, P0, and the two arrays that contain Cjs and Pjs.
     """
-    return (y_left,y_right,P0,np.array(Cjs),np.array(Pjs))
+    At the moment we just return P0, the probability value above which
+    C0 of the probability is enclosed.
+    """
+    return P0
