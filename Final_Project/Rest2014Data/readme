@@ -1,0 +1,5 @@
+final.fitres  - all of the light curve fit information for the combined sample of cosmologically useful SNe.
+Cov.mat  - the covariance matrix of systematic errors for the final combined sample.
+
+
+
