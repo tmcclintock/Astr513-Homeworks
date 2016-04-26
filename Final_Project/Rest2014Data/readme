@@ -1,5 +1,11 @@
-final.fitres  - all of the light curve fit information for the combined sample of cosmologically useful SNe.
-Cov.mat  - the covariance matrix of systematic errors for the final combined sample.
+redshift_distanceMod.dat  - 
+	column 1: z
+	column 2: distance modulus
+	final combined sample has 335 SNe 
+
+covarianceMatrix.dat  - 
+	the covariance matrix for the final combined sample
+	matrix is (335 x 335)
 
 
 
