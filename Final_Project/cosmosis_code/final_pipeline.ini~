@@ -1,13 +1,11 @@
 [runtime]
 sampler = test
-;sampler = emcee
 
 [test]
 save_dir = my_tests/my_output
 
 [pipeline]
 modules = consistency camb planck
-;astr_513_SNIA
 values = ${COSMOSIS_SRC_DIR}/my_tests/astr513/final_cosmology.ini
 ;${cosmology}
 likelihoods = planck2015
@@ -39,7 +37,3 @@ do_lensing=T
 do_nonlinear=T
 high_ell_template=cosmosis-standard-library/boltzmann/camb/camb_Jan15/HighLExtrapTemplate_lenspotentialCls.dat
 
-[astr_513_SNIA]
-file = modules/my_modules/astr_513_SNIA/astr_513_SNIA.py
-datapath = ${datapath}
-covpath = ${covpath}
