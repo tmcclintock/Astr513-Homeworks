@@ -1,0 +1,49 @@
+\begin{thebibliography}{}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{Betoule} {et~al.}(2014){Betoule}, {Kessler}, {Guy}, {Mosher},
+  {Hardin}, {Biswas}, {Astier}, {El-Hage}, {Konig}, {Kuhlmann}, {Marriner},
+  {Pain}, {Regnault}, {Balland}, {Bassett}, {Brown}, {Campbell}, {Carlberg},
+  {Cellier-Holzem}, {Cinabro}, {Conley}, {D'Andrea}, {DePoy}, {Doi}, {Ellis},
+  {Fabbro}, {Filippenko}, {Foley}, {Frieman}, {Fouchez}, {Galbany}, {Goobar},
+  {Gupta}, {Hill}, {Hlozek}, {Hogan}, {Hook}, {Howell}, {Jha}, {Guillou},
+  {Leloudas}, {Lidman}, {Marshall}, {M{\"{o}}ller}, {Mour{\~{a}}o}, {Neveu},
+  {Nichol}, {Olmstead}, {Palanque-Delabrouille}, {Perlmutter}, {Prieto},
+  {Pritchet}, {Richmond}, {Riess}, {Ruhlmann-Kleider}, {Sako}, {Schahmaneche},
+  {Schneider}, {Smith}, {Sollerman}, {Sullivan}, {Walton}, \&
+  {Wheeler}}]{betoule2014}
+{Betoule}, M., {Kessler}, R., {Guy}, J., {et~al.} 2014, Astron. Astrophys.,
+  568, A22+.
+
+\bibitem[{{Conley} {et~al.}(2011){Conley}, {Guy}, {Sullivan}, {Regnault},
+  {Astier}, {Balland}, {Basa}, {Carlberg}, {Fouchez}, {Hardin}, {Hook},
+  {Howell}, {Pain}, {Palanque-Delabrouille}, {Perrett}, {Pritchet}, {Rich},
+  {Ruhlmann-Kleider}, {Balam}, {Baumont}, {Ellis}, {Fabbro}, {Fakhouri},
+  {Fourmanoit}, {Gonz{\'a}lez-Gait{\'a}n}, {Graham}, {Hudson}, {Hsiao},
+  {Kronborg}, {Lidman}, {Mourao}, {Neill}, {Perlmutter}, {Ripoche}, {Suzuki},
+  \& {Walker}}]{conley2011}
+{Conley}, A., {Guy}, J., {Sullivan}, M., {et~al.} 2011, \apjs, 192, 1.
+
+\bibitem[{{Rest} {et~al.}(2014){Rest}, {Scolnic}, {Foley}, {Huber}, {Chornock},
+  {Narayan}, {Tonry}, {Berger}, {Soderberg}, {Stubbs}, {Riess}, {Kirshner},
+  {Smartt}, {Schlafly}, {Rodney}, {Botticella}, {Brout}, {Challis}, {Czekala},
+  {Drout}, {Hudson}, {Kotak}, {Leibler}, {Lunnan}, {Marion}, {McCrum},
+  {Milisavljevic}, {Pastorello}, {Sanders}, {Smith}, {Stafford}, {Thilker},
+  {Valenti}, {Wood-Vasey}, {Zheng}, {Burgett}, {Chambers}, {Denneau}, {Draper},
+  {Flewelling}, {Hodapp}, {Kaiser}, {Kudritzki}, {Magnier}, {Metcalfe},
+  {Price}, {Sweeney}, {Wainscoat}, \& {Waters}}]{rest2014}
+{Rest}, A., {Scolnic}, D., {Foley}, R.~J., {et~al.} 2014, Astrophys. J., 795,
+  44+.
+
+\bibitem[{{Sako} {et~al.}(2014){Sako}, {Bassett}, {Becker}, {Brown},
+  {Campbell}, {Cane}, {Cinabro}, {D'Andrea}, {Dawson}, {DeJongh}, {Depoy},
+  {Dilday}, {Doi}, {Filippenko}, {Fischer}, {Foley}, {Frieman}, {Galbany},
+  {Garnavich}, {Goobar}, {Gupta}, {Hill}, {Hayden}, {Hlozek}, {Holtzman},
+  {Hopp}, {Jha}, {Kessler}, {Kollatschny}, {Leloudas}, {Marriner}, {Marshall},
+  {Miquel}, {Morokuma}, {Mosher}, {Nichol}, {Nordin}, {Olmstead}, {Ostman},
+  {Prieto}, {Richmond}, {Romani}, {Sollerman}, {Stritzinger}, {Schneider},
+  {Smith}, {Wheeler}, {Yasuda}, \& {Zheng}}]{sako2014}
+{Sako}, M., {Bassett}, B., {Becker}, A.~C., {et~al.} 2014, ArXiv e-prints,
+  arXiv:1401.3317.
+
+\end{thebibliography}
