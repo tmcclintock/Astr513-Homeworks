@@ -29,7 +29,9 @@
 \newcommand\TM[1]{\todo[color=green!40, inline, size=\small]{TM: #1}}
 \newcommand\EW[1]{\todo[color=blue!40, inline, size=\small]{TM: #1}}
 \newcommand\LC[1]{\todo[color=magenta!40, inline, size=\small]{TM: #1}}
+
 \newcommand\Planck{{\it Planck}\ }
+\newcommand\Cosmosis{{\it Cosmosis}\ }
 
 
 % Roman numerals command
@@ -68,7 +70,20 @@ In 2009 the European Space Agency launched the \Planck satellite in order
 to measure the Cosmis Microwave Background (CMB) with unparalleled precision.
 By measuring the small anisotropies in the temperature of the CMB across
 the entire sky one calculates the angular power spectrum, which can be
-predicted from first principles (see, e.g., \citet{dodelson2003}).
+modeled using first principles (see, e.g., \citet{dodelson2003}).
+By using a likelihood method similar to our own, the authors of
+\citet{planck2013} estimated 14 nuisance parameters and 
+six cosmological parameters, including the geometrical parameters,
+$\Omega_M$, $\Omega_\Lambda$ and $\Omega_k$, that we use in our
+SNIa analysis. The only prior used by \citet{planck2013}
+on cosmological parameters was from the WMAP result \citep{wmap2011}
+for the optical depth $\tau$. We do not use this parameter
+in our SNIa model.
+
+\citet{planck2013} report marginalized
+posterior distributions for all parameters,
+which we report in Table~XXX. This prior is implemented
+in the planck2015 module implemented in \Cosmosis \citep{cosmosis}.
 
 \section{Data}
 \label{sec:data}

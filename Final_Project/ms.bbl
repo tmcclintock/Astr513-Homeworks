@@ -29,6 +29,19 @@
 {Dodelson}, S.
 \newblock \emph{{Modern cosmology}}. 2003, {Modern cosmology}.
 
+\bibitem[{{Komatsu} {et~al.}(2011){Komatsu}, {Smith}, {Dunkley}, {Bennett},
+  {Gold}, {Hinshaw}, {Jarosik}, {Larson}, {Nolta}, {Page}, {Spergel},
+  {Halpern}, {Hill}, {Kogut}, {Limon}, {Meyer}, {Odegard}, {Tucker}, {Weiland},
+  {Wollack}, \& {Wright}}]{wmap2011}
+{Komatsu}, E., {Smith}, K.~M., {Dunkley}, J., {et~al.} 2011, Astrophys. J.
+  Supp., 192, 18.
+
+\bibitem[{{Planck Collaboration} {et~al.}(2014){Planck Collaboration}, {Ade},
+  {Aghanim}, {Armitage-Caplan}, {Arnaud}, {Ashdown}, {Atrio-Barandela},
+  {Aumont}, {Baccigalupi}, {Banday}, \& et~al.}]{planck2013}
+{Planck Collaboration}, {Ade}, P.~A.~R., {Aghanim}, N., {et~al.} 2014, Astron.
+  Astrophys., 571, A15.
+
 \bibitem[{{Rest} {et~al.}(2014){Rest}, {Scolnic}, {Foley}, {Huber}, {Chornock},
   {Narayan}, {Tonry}, {Berger}, {Soderberg}, {Stubbs}, {Riess}, {Kirshner},
   {Smartt}, {Schlafly}, {Rodney}, {Botticella}, {Brout}, {Challis}, {Czekala},
@@ -50,5 +63,10 @@
   {Smith}, {Wheeler}, {Yasuda}, \& {Zheng}}]{sako2014}
 {Sako}, M., {Bassett}, B., {Becker}, A.~C., {et~al.} 2014, ArXiv e-prints,
   arXiv:1401.3317.
+
+\bibitem[{Zuntz {et~al.}(2014)Zuntz, Paterno, Jennings, Rudd, Manzotti,
+  Dodelson, Bridle, Sehrish, \& Kowalkowski}]{cosmosis}
+Zuntz, J., Paterno, M., Jennings, E., {et~al.} 2014, {CosmoSIS: modular
+  cosmological parameter estimation}, arXiv:1409.3409.
 
 \end{thebibliography}
