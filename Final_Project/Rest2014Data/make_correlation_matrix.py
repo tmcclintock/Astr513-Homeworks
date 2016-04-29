@@ -5,11 +5,11 @@ correlation matrix, and then makes a figure.
 import numpy as np
 
 #Pull out the z and mus
-data = np.genfromtxt("tablef1.dat")
+data = np.genfromtxt("redshift_distanceMod.dat")
 z,mu = data.T
 
 #Get the covariance matrix
-cov  = np.genfromtxt("tablef2.dat")
+cov  = np.genfromtxt("covarianceMatrix.dat")
 
 #Define the correlation matrix
 corr = np.zeros_like(cov)
@@ -32,5 +32,5 @@ ax.set_xlabel("Redshift $z$",fontsize=fs)
 ax.set_ylabel("Redshift $z$",fontsize=fs)
 plt.subplots_adjust(bottom=0.15)
 
-plt.gcf().savefig("Betoule_correlation.eps")
+plt.gcf().savefig("Rest_correlation.eps")
 plt.show()

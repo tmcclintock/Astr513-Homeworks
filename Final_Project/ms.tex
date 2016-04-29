@@ -57,7 +57,11 @@
 \maketitle
 
 \section{Type Ia Supernovae}
+\label{sec:SNIa}
 \TM{TODO: Complete this section.}
+
+\section{Planck 2015 Results}
+\label{sec:planck}
 
 \section{Data}
 \label{sec:data}
@@ -104,11 +108,19 @@ Therefore, the data and covariance matrix are merely given at the
   a brief discussion about how it was made.}
 
 \begin{figure}
- \includegraphics[width=\linewidth]{figures/correlation.eps}
+ \includegraphics[width=\linewidth]{figures/Betoule_correlation.eps}
  \caption{Correlation matrix of $\mu_0(z)$ from the
  \citet{betoule2014} sample.}
  \label{fig:cmatrix}
 \end{figure}
+
+\begin{figure}
+ \includegraphics[width=\linewidth]{figures/Rest_correlation.eps}
+ \caption{Correlation matrix of $\mu_0(z)$ from the
+ \citet{rest2014} sample.}
+ \label{fig:cmatrix}
+\end{figure}
+
 
 \section{Distance Modulus Model}
 \label{sec:model}
@@ -118,8 +130,13 @@ Therefore, the data and covariance matrix are merely given at the
 \label{sec:likelihood}
 \TM{This has our likelihood.}
 
-\subsection{Results}
-\TM{Discuss the results and show the corner plot. Example plot included.}
+\subsection{Planck Priors}
+\label{sec:planck_priors}
+
+\section{Results}
+\label{sec:results}
+\TM{Discuss the results and show the corner plots. Example plot included.
+  We should have one corner plot without priors and one with priors.}
 
 \begin{figure}
  \includegraphics[width=\linewidth]{figures/corner_example.eps}
@@ -127,11 +144,10 @@ Therefore, the data and covariance matrix are merely given at the
  \label{fig:corner}
 \end{figure}
 
-%\section*{References}
-%
-%\begin{enumerate}
-%  \item test
-%\end{enumerate}
+\section{Conclusions}
+\label{sec:conclusions}
+\TM{Talk about how the inclusions if priors changes the analysis.
+  State whether the priors are strong or uninformative.}
 
 \bibliography{msbib}
 
