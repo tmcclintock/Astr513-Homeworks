@@ -36,6 +36,15 @@
 {Komatsu}, E., {Smith}, K.~M., {Dunkley}, J., {et~al.} 2011, Astrophys. J.
   Supp., 192, 18.
 
+\bibitem[{{Perlmutter} {et~al.}(1999){Perlmutter}, {Aldering}, {Goldhaber},
+  {Knop}, {Nugent}, {Castro}, {Deustua}, {Fabbro}, {Goobar}, {Groom}, {Hook},
+  {Kim}, {Kim}, {Lee}, {Nunes}, {Pain}, {Pennypacker}, {Quimby}, {Lidman},
+  {Ellis}, {Irwin}, {McMahon}, {Ruiz-Lapuente}, {Walton}, {Schaefer}, {Boyle},
+  {Filippenko}, {Matheson}, {Fruchter}, {Panagia}, {Newberg}, {Couch}, \&
+  {Project}}]{perlmutter1999}
+{Perlmutter}, S., {Aldering}, G., {Goldhaber}, G., {et~al.} 1999, ApJ, 517,
+  565.
+
 \bibitem[{{Planck Collaboration} {et~al.}(2014){Planck Collaboration}, {Ade},
   {Aghanim}, {Armitage-Caplan}, {Arnaud}, {Ashdown}, {Atrio-Barandela},
   {Aumont}, {Baccigalupi}, {Banday}, \& et~al.}]{planck2013}
@@ -52,6 +61,20 @@
   {Price}, {Sweeney}, {Wainscoat}, \& {Waters}}]{rest2014}
 {Rest}, A., {Scolnic}, D., {Foley}, R.~J., {et~al.} 2014, Astrophys. J., 795,
   44+.
+
+\bibitem[{{Riess} {et~al.}(1998){Riess}, {Filippenko}, {Challis},
+  {Clocchiatti}, {Diercks}, {Garnavich}, {Gilliland}, {Hogan}, {Jha},
+  {Kirshner}, {Leibundgut}, {Phillips}, {Reiss}, {Schmidt}, {Schommer},
+  {Smith}, {Spyromilio}, {Stubbs}, {Suntzeff}, \& {Tonry}}]{riess1998}
+{Riess}, A.~G., {Filippenko}, A.~V., {Challis}, P., {et~al.} 1998, Astron. J.,
+  116, 1009.
+
+\bibitem[{Ryden \& Peterson(2010)}]{ryden2010}
+Ryden, B., \& Peterson, B.
+\newblock \emph{Foundations of Astrophysics}. 2010, Foundations of Astrophysics
+  (Addison-Wesley).
+\newblock URL \url{https://books.google.com/books?id=1p7tOwAACAAJ}.
+\newblock ISBN 9780321595584.
 
 \bibitem[{{Sako} {et~al.}(2014){Sako}, {Bassett}, {Becker}, {Brown},
   {Campbell}, {Cane}, {Cinabro}, {D'Andrea}, {Dawson}, {DeJongh}, {Depoy},
