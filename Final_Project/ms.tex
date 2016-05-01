@@ -27,8 +27,8 @@
 
 \usepackage{todonotes}
 \newcommand\TM[1]{\todo[color=green!40, inline, size=\small]{TM: #1}}
-\newcommand\EW[1]{\todo[color=blue!40, inline, size=\small]{TM: #1}}
-\newcommand\LC[1]{\todo[color=magenta!40, inline, size=\small]{TM: #1}}
+\newcommand\EW[1]{\todo[color=blue!40, inline, size=\small]{EW: #1}}
+\newcommand\LC[1]{\todo[color=magenta!40, inline, size=\small]{LC: #1}}
 
 \newcommand\Planck{{\it Planck}\ }
 \newcommand\Cosmosis{{\it Cosmosis}\ }
@@ -62,7 +62,6 @@
 
 \section{Type \rom{1}a Supernovae}
 \label{sec:SNIa}
-\TM{TODO: Complete this section.}
 \EW{You guys might want to read this over and tell me if you think I should
   change/add anything.}
 A type \rom{1}a supernova (\sna{}) is a supernova with very little hydrogen or
@@ -101,10 +100,10 @@ By using a likelihood method similar to our own, the authors of
 \citet{planck2013} estimated 14 nuisance parameters and 
 six cosmological parameters, including the geometrical parameters,
 $\Omega_M$, $\Omega_\Lambda$ and $\Omega_k$, that we use in our
-SNIa analysis. The only prior used by \citet{planck2013}
+{\sna} analysis. The only prior used by \citet{planck2013}
 on cosmological parameters was from the WMAP result \citep{wmap2011}
 for the optical depth $\tau$. We do not use this parameter
-in our SNIa model.
+in our {\sna} model.
 
 \citet{planck2013} report marginalized
 posterior distributions for all parameters,
@@ -113,8 +112,7 @@ in the planck2015 module implemented in \Cosmosis \citep{cosmosis}.
 
 \section{Data}
 \label{sec:data}
-\TM{TODO: Complete this section.}
-Our data is compiled from \citet{betoule2014} and \citet{rest2014} blah blah blah...
+Our {\sna} data is compiled from the samples analyzed in \citet{betoule2014} and \citet{rest2014}. In the following subsections, we will specify the surveys and detail the composition of the two samples. Additionally, we will describe the publicly released data from the two papers.
 
 \subsection{The JLA sample}
 \label{sec:betoule}
@@ -132,7 +130,7 @@ that were confirmed in the spectroscopic follow-up. The rest of the
 low redshift ($z < 0.08$) from a variety of sources. We made use of the 
 publicly available distance moduli, redshifts, and covariance 
 matrix provided by \citet{betoule2014}\footnote{Data is available 
-for download via \url{http://cdsweb.u-strasbrg.fr/cgi-bin/qcat?J/A+A/568/A22}}. 
+for download via \url{http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/568/A22}}. 
 We note that the distance moduli are binned, so that they are only computed and 
 given on a grid of redshifts. The distance modulus can then be well 
 approximated by a piecewise linear function of $\log(z)$ that is given 
@@ -148,10 +146,18 @@ and $\mu_i$ is the distance modulus at control point $z_i$.
 Therefore, the data and covariance matrix are merely given at the 
 31 control points log-spaced in the redshift range $0.01 < z < 1.3$.
 
+\subsection{The Pan-STARRS1 sample}
+\label{sec:rest}
+
+\citet{rest2014} uses the first 1.5 year of the first telescope of the Panoramic Survey Telescope and Rapid Response System (Pan-STARRS1) and a compilation of low-redshift {\sna} studies. The low-redshift sample consists of {\snea} collected by Calan/Tololo (Hamuy et al. 1996a), CfA1 (Riess et al. 1999), CfA2 (Jha et al. 2006), CfA3 (Hicken et al. 2009a), CSP (Contreras et al. 2010), and CfA4 (Hicken et al. 2012). After three quality cuts, 113 spectroscopically confirmed {\snea} from Pan-STARRS1 ($0.03 < z < 0.65$) and 222 light curves from 197 low-redshift {\snea} are used for cosmological analysis. 
+
+The publicly available data from \citet{rest2014} contains all light curves, light curve fit information, covariance matrix, and each {\sn} host information.\footnote{Data can be accessed at \url{http://ipp0012.ifa.hawaii.edu/SN1aLC/}}. For our analysis, we utilized the redshifts, distance moduli, and covariance matrix of the final sample of 310 {{\snea} or 335 light curves. 
+
 \subsection{Covariances}
 \label{sec:covariances}
 \TM{A subsection that explains how the covariance matrix looks. Basically
   a brief discussion about how it was made.}
+\LC{Wrote about Rest's cov matrix. Still need description of Betoule's.}
 
 \begin{figure}
  \includegraphics[width=\linewidth]{figures/Betoule_correlation.eps}
@@ -160,6 +166,13 @@ Therefore, the data and covariance matrix are merely given at the
  \label{fig:cmatrix}
 \end{figure}
 
+The publicly released covariance matrix from \citet{rest2014} is comprised of systematic errors for the final sample. These systematics, defined in \citet{scolnic2014}, include flux calibration errors, selection effects, light curve fitting, host galaxy relations, Milky Way extinction corrections, and coherent velocity flows. Calculating the covariance matrix involves varying a systematic parameter and determining the difference between the original distance and the new distance. The covariance between {\sn} $i$ and {\sn} $j$ is 
+\begin{equation}
+\label{eq:RestCovMatrix}
+C_{ij}=\displaystyle \sum_{k = 1}^K \left(\frac{\partial \mu_i}{\partial S_k}\right)\left(\frac{\partial \mu_j}{\partial S_k}\right)\left(\sigma_{S_k}\right)^2,
+\end{equation}
+where the summation is over $K$ systematics, $\sigma_{S_k}$ is each systematic error magnitude, and $\partial \mu$ is the difference in distance modulus from varying a systematic parameter.
+
 \begin{figure}
  \includegraphics[width=\linewidth]{figures/Rest_correlation.eps}
  \caption{Correlation matrix of $\mu_0(z)$ from the
@@ -167,10 +180,35 @@ Therefore, the data and covariance matrix are merely given at the
  \label{fig:cmatrix}
 \end{figure}
 
-
 \section{Distance Modulus Model}
 \label{sec:model}
 \TM{This explains how to go from a cosmology to $\mu(z)$.}
+\LC{Need more here but I wrote most of the relevant eqns}
+The main objective of \citet{betoule2014} and \citet{rest2014} is to place constraints on cosmological parameters $\Omega_M$, $\Omega_\Lambda$, and $w$. In order to so, we must examine the relationship between distance modulus and cosmology. The distance modulus $\mu$ is determined from the luminosity distance $d_L$ by 
+\begin{equation}
+\label{eq:mu_dL}
+\mu=5 \text{log}(d_L)+25. 
+\end{equation}
+The luminosity distance depends on the cosmology by 
+\begin{equation}
+\label{eq:luminosityDistance}
+d_L(z; w, \Omega_M, \Omega_\Lambda, H_0)= (1+z)|\Omega_k|^{-1/2}\mathcal{S}_{k}\displaystyle\left[c|\Omega_k|^{1/2}\int_{0}^{z}\frac{dz'}{H(z')}\right],
+\end{equation}
+where $\Omega_k \equiv 1-\Omega_M-\Omega_{\Lambda}$. The function $\mathcal{S}_{k}$ depends on the curvature density $\Omega_k$ in that 
+\[
+    \mathcal{S}_{k}= 
+\begin{cases}
+    \text{sin}(x),&  \Omega_k < 0\\
+    x,& \Omega_k = 0\\
+    \text{sinh}(x),& \Omega_k > 0
+\end{cases}
+\]
+and the function $H(z)$ is 
+\begin{equation}
+\label{eq:hubbleFunction}
+H(z)= H_0\displaystyle\left[\Omega_M(1+z)^3+\Omega_{\Lambda}(1+z)^{3(1+w)}+\Omega_k(1+z)^2\right]^{1/2}.
+\end{equation}
+Three (?) cosmologies are of interest to us: \LC{Not sure which ones we're interested in. $\Lambda CDM$, $\Omega_M=1$, ?}
 
 \subsection{Likelihood}
 \label{sec:likelihood}
