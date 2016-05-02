@@ -62,8 +62,8 @@
 
 \section{Type \rom{1}a Supernovae}
 \label{sec:SNIa}
-\EW{You guys might want to read this over and tell me if you think I should
-  change/add anything.}
+\EW{Should I cite the Nobel Prize information document where I found out about 
+the stuff in the last few sentences? I'm not entirely sure what that would be considered...}
 A type \rom{1}a supernova (\sna{}) is a supernova with very little hydrogen or
 helium absorption. It is believed that the progenitor for these special
 supernovae are white dwarfs that are part of a binary system. These white
@@ -73,21 +73,7 @@ dwarf or neutron star, causing them to exceed the Chandrasekhar limit
 core, and the temperature increases. However, the white dwarf does not expand
 and cool as a main sequence star would, since it is supported by degeneracy
 pressure rather than thermal, so the core experiences a runaway fusion
-reaction, releasing $\sim 10^{44}$ J of energy
-\citep[see, e.g.,][chap. 18.4]{ryden2010}, which is enough to overcome the
-gravitational energy and the star explodes. Because all \snea{} are caused by a
-similar reaction, they all have similar luminosities, and more importantly, the
-light curves all have the same shape: a sharp maximum followed by a smooth,
-gradual decay. Studying nearby \snea{} has shown that the rate of decline of
-the light curve is correlated to the peak luminosity, and this correlation has
-been calibrated using Cephied variable stars located in the same galaxies as
-nearby \sna{}. With this information, we can estimate peak luminosity of an
-\sna{} from its light curve, thereby providing us with a standard candle with
-which to measure distance. They were first used in this way by the
-Cal\'{a}n/Tololo Supernova Survey, and it was using \snea{} that
-\citet{riess1998} and \citet{perlmutter1999} were able to discover the
-accelerating expansion rate of the Universe for which three of the authors
-later won the Nobel Prize in physics.
+reaction, releasing $\sim 10^{44}$ J of energy \citep[see, e.g.,][chap. 18.4]{ryden2010}, which is enough to overcome the gravitational energy and the star explodes. Because all \snea{} are caused by a similar reaction, they all have similar luminosities, and more importantly, the light curves all have the same shape: a sharp maximum followed by a smooth, gradual decay. Studying nearby \snea{} has shown that the rate of decline of the light curve is correlated to the peak luminosity, and this correlation has been calibrated using Cephied variable stars located in the same galaxies as nearby \sna{}. With this information, we can estimate peak luminosity of an \sna{} from its light curve, thereby providing us with a standard candle with which to measure distance. They were first used in this way in the 1990s by two independent teams, the Supernova Cosmology Project and the Cal\'{a}n/Tololo Supernova Survey. It was using distances from \snea{} from these two projects that \citet{riess1998} and \citet{perlmutter1999} were able to discover the accelerating expansion rate of the Universe in 1998. It was for this work that Saul Perlmutter, Brian P. Schmidt, and Adam G. Reiss won the Nobel Prize in physics in 2011.
 
 \section{Planck 2015 Results}
 \label{sec:planck}
@@ -174,6 +160,7 @@ final sample of 310 {{\snea} or 335 light curves.
 \subsection{Covariances}
 \label{sec:covariances}
 \LC{Wrote about Rest's cov matrix. Still need description of Betoule's.}
+\EW{Wrote about Beoule's covariance matrix.}
 
 \begin{figure}
  \includegraphics[width=\linewidth]{figures/Betoule_correlation.eps}
@@ -198,6 +185,13 @@ where the summation is over $K$ systematics, $\sigma_{S_k}$ is each
 systematic error magnitude, and $\partial \mu$ is the difference in 
 distance modulus from varying a systematic parameter.
 
+\citet{betoule2014} choose to first calculate the covariance matrix $\mathbf{C}_{\mathbf{\eta}}$ of the 3 light curve fit-parameters $\mathbf{\eta}$ by adding the individual covariance matrices they get from statistical errors propagated from light-curve fit uncertainties and 7 sources of systematic uncertainties they consider from their photometric calibartion, light-curve model uncertainty, bias correction, a mass step uncertainty introduced when correcting magnitudes due to host mass, Galactic extinction, peculiar velocities, and contamination by non-\sna{}. They then propagate these errors to the distance modulus and use three terms to account for uncertainty in cosmological redshift by the equation
+\begin{equation}
+\label{eq:BetouleCovMatrix}
+\mathbf{C} = \mathbf{A} \mathbf{C}_\mathbf{\eta} \mathbf{A}^\dag + \mathrm{diag}\left(\frac{5 \sigma_z}{z \log 10}\right)^2 + \mathrm{diag}\left(\sigma_{\mathrm{lens}}^2\right) + \mathrm{diag}\left(\sigma_{\mathrm{coh}}^2\right),
+\end{equation}
+where $\mathbf{A}$ is the matrix of coefficients in the distance modulus, and redshift uncertainty is accounted for in the first diagonal term due to peculiar velocities, the second due to magnitude variation from gravitational lensing, and the third from intrinsic \sn{} magnitude variation not included in other terms. They use $c \sigma_z = 150 \mathrm{km}\, \mathrm{s}^{-1}$, $\sigma_{\mathrm{lens}} = 0.055 \times z$, and a value of $\sigma_{\mathrm{coh}}$ for each survey found using a restricted log-likelihood technique. The elements of the covariance matrix available online are calculated on the redshift control points $z_b$ as described in \S \ref{sec:betoule}.
+
 \begin{figure}
  \includegraphics[width=\linewidth]{figures/Rest_correlation.eps}
  \caption{Correlation matrix of $\mu_0(z)$ from the
@@ -208,6 +202,7 @@ distance modulus from varying a systematic parameter.
 \section{Distance Modulus Model}
 \label{sec:model}
 \LC{Need more here but I wrote most of the relevant eqns}
+\EW{Do we want/need citations for the equations here?}
 The main objective of \citet{betoule2014} and \citet{rest2014} is 
 to place constraints on cosmological parameters $\Omega_M$, $\Omega_\Lambda$, 
 and $w$. In order to so, we must examine the relationship between distance 
