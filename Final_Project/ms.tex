@@ -64,6 +64,8 @@
 \label{sec:SNIa}
 \EW{Should I cite the Nobel Prize information document where I found out about 
 the stuff in the last few sentences? I'm not entirely sure what that would be considered...}
+\TM{No, because it is common knowledge. I think though that since this is meant to emulate
+  a research paper that we don't need to point out that it was what the NP was awarded for.}
 A type \rom{1}a supernova (\sna{}) is a supernova with very little hydrogen or
 helium absorption. It is believed that the progenitor for these special
 supernovae are white dwarfs that are part of a binary system. These white
@@ -73,7 +75,23 @@ dwarf or neutron star, causing them to exceed the Chandrasekhar limit
 core, and the temperature increases. However, the white dwarf does not expand
 and cool as a main sequence star would, since it is supported by degeneracy
 pressure rather than thermal, so the core experiences a runaway fusion
-reaction, releasing $\sim 10^{44}$ J of energy \citep[see, e.g.,][chap. 18.4]{ryden2010}, which is enough to overcome the gravitational energy and the star explodes. Because all \snea{} are caused by a similar reaction, they all have similar luminosities, and more importantly, the light curves all have the same shape: a sharp maximum followed by a smooth, gradual decay. Studying nearby \snea{} has shown that the rate of decline of the light curve is correlated to the peak luminosity, and this correlation has been calibrated using Cephied variable stars located in the same galaxies as nearby \sna{}. With this information, we can estimate peak luminosity of an \sna{} from its light curve, thereby providing us with a standard candle with which to measure distance. They were first used in this way in the 1990s by two independent teams, the Supernova Cosmology Project and the Cal\'{a}n/Tololo Supernova Survey. It was using distances from \snea{} from these two projects that \citet{riess1998} and \citet{perlmutter1999} were able to discover the accelerating expansion rate of the Universe in 1998. It was for this work that Saul Perlmutter, Brian P. Schmidt, and Adam G. Reiss won the Nobel Prize in physics in 2011.
+reaction, releasing $\sim 10^{44}$ J of energy \citep[see, e.g.,][chap. 18.4]{ryden2010}, 
+which is enough to overcome the gravitational energy and the star explodes. Because all 
+\snea{} are caused by a similar reaction, they all have similar luminosities, and more 
+importantly, the light curves all have the same shape: a sharp maximum followed by a smooth, 
+gradual decay. Studying nearby \snea{} has shown that the rate of decline of the light curve 
+is correlated to the peak luminosity, and this correlation has been calibrated using Cephied 
+variable stars located in the same galaxies as nearby \sna{}. With this information, one can 
+estimate peak luminosity of an \sna{} from its light curve, thereby providing a 
+standard candle with which to measure distance. They were first used in this way in the 
+1990s by two independent teams, the Supernova Cosmology Project and the Cal\'{a}n/Tololo 
+Supernova Survey. It was using distances from \snea{} from these two projects that 
+\citet{riess1998} and \citet{perlmutter1999} were able to discover the accelerating expansion 
+rate of the Universe in 1998. 
+%It was for this work that Saul Perlmutter, Brian P. Schmidt, 
+%and Adam G. Reiss won the Nobel Prize in physics in 2011.
+\TM{Changed grammer in this section, since ``we'' did not actually do these things.
+  Review and collapse bubbles.}
 
 \section{Planck 2015 Results}
 \label{sec:planck}
@@ -105,7 +123,6 @@ Additionally, we will describe the publicly released data from the two papers.
 
 \subsection{The JLA sample}
 \label{sec:betoule}
-
 \citet{betoule2014} define their ``joint light-curve analysis'' (JLA) 
 sample, a total of 740 \snea{} compiled from a combination of 
 data from the Sloan Digital Sky 
@@ -139,7 +156,6 @@ Therefore, the data and covariance matrix are merely given at the
 
 \subsection{The Pan-STARRS1 sample}
 \label{sec:rest}
-
 \citet{rest2014} uses the first 1.5 year of the first telescope of 
 the Panoramic Survey Telescope and Rapid Response System (Pan-STARRS1) 
 and a compilation of low-redshift {\sna} studies. The low-redshift 
@@ -155,20 +171,12 @@ curves, light curve fit information, covariance matrix, and each {\sn}
 host information.\footnote{Data can be accessed at 
 \url{http://ipp0012.ifa.hawaii.edu/SN1aLC/}}. For our analysis, we 
 utilized the redshifts, distance moduli, and covariance matrix of the 
-final sample of 310 {{\snea} or 335 light curves. 
+final sample of 310 {{\snea} or 335 light curves.
+\TM{There is some kind of undefined reference error in the above line. 
+  It doesn't alter the pdf document, but can we figure out what is going on?}
 
 \subsection{Covariances}
 \label{sec:covariances}
-\LC{Wrote about Rest's cov matrix. Still need description of Betoule's.}
-\EW{Wrote about Beoule's covariance matrix.}
-
-\begin{figure}
- \includegraphics[width=\linewidth]{figures/Betoule_correlation.eps}
- \caption{Correlation matrix of $\mu_0(z)$ from the
- \citet{betoule2014} sample.}
- \label{fig:cmatrix}
-\end{figure}
-
 The publicly released covariance matrix from \citet{rest2014} 
 is comprised of systematic errors for the final sample. These systematics, 
 defined in \citet{scolnic2014}, include flux calibration errors, 
@@ -185,18 +193,67 @@ where the summation is over $K$ systematics, $\sigma_{S_k}$ is each
 systematic error magnitude, and $\partial \mu$ is the difference in 
 distance modulus from varying a systematic parameter.
 
-\citet{betoule2014} choose to first calculate the covariance matrix $\mathbf{C}_{\mathbf{\eta}}$ of the 3 light curve fit-parameters $\mathbf{\eta}$ by adding the individual covariance matrices they get from statistical errors propagated from light-curve fit uncertainties and 7 sources of systematic uncertainties they consider from their photometric calibartion, light-curve model uncertainty, bias correction, a mass step uncertainty introduced when correcting magnitudes due to host mass, Galactic extinction, peculiar velocities, and contamination by non-\sna{}. They then propagate these errors to the distance modulus and use three terms to account for uncertainty in cosmological redshift by the equation
+\citet{betoule2014} choose to first calculate the covariance 
+matrix $\mathbf{C}_{\mathbf{\eta}}$ of the 3 light curve fit-parameters $\mathbf{\eta}$ 
+by adding the individual covariance matrices they get from statistical errors propagated 
+from light-curve fit uncertainties and 7 sources of systematic uncertainties 
+they consider from their photometric calibartion, light-curve model uncertainty, 
+bias correction, a mass step uncertainty introduced when correcting magnitudes due 
+to host mass, Galactic extinction, peculiar velocities, and contamination by 
+non-\sna{}. They then propagate these errors to the distance modulus and use three 
+terms to account for uncertainty in cosmological redshift by the equation
 \begin{equation}
 \label{eq:BetouleCovMatrix}
 \mathbf{C} = \mathbf{A} \mathbf{C}_\mathbf{\eta} \mathbf{A}^\dag + \mathrm{diag}\left(\frac{5 \sigma_z}{z \log 10}\right)^2 + \mathrm{diag}\left(\sigma_{\mathrm{lens}}^2\right) + \mathrm{diag}\left(\sigma_{\mathrm{coh}}^2\right),
 \end{equation}
-where $\mathbf{A}$ is the matrix of coefficients in the distance modulus, and redshift uncertainty is accounted for in the first diagonal term due to peculiar velocities, the second due to magnitude variation from gravitational lensing, and the third from intrinsic \sn{} magnitude variation not included in other terms. They use $c \sigma_z = 150 \mathrm{km}\, \mathrm{s}^{-1}$, $\sigma_{\mathrm{lens}} = 0.055 \times z$, and a value of $\sigma_{\mathrm{coh}}$ for each survey found using a restricted log-likelihood technique. The elements of the covariance matrix available online are calculated on the redshift control points $z_b$ as described in \S \ref{sec:betoule}.
+where $\mathbf{A}$ is the matrix of coefficients in the distance modulus, 
+and redshift uncertainty is accounted for in the first diagonal term due to 
+peculiar velocities, the second due to magnitude variation from gravitational lensing, 
+and the third from intrinsic \sn{} magnitude variation not included in other terms. 
+They use $c \sigma_z = 150 \mathrm{km}\, \mathrm{s}^{-1}$, 
+$\sigma_{\mathrm{lens}} = 0.055 \times z$, and a value of $\sigma_{\mathrm{coh}}$ for each 
+survey found using a restricted log-likelihood technique. The elements of the covariance 
+matrix available online are calculated on the redshift control points $z_b$ as 
+described in \S \ref{sec:betoule}.
+
+For both of these data sets, the covariance matrix can be visualized using a related
+quantity known as the correlation matrix $Corr$. When two quantities are (anti)correlated,
+the value of one quantity (decreases)increases when the other quantity increases.
+If the variables one has measured are independent, then the correlation between
+differen variables should be $\approx0$.
+
+A correlation matrix for $N$ variables is $N\times N$ in size, and the $ij$th
+element is the correlation between the $i$th and $j$th variables. Therefore, 
+the correlation matrix for \citet{betoule2014} is $31\times31$, while
+for \citet{rest2014} is $335\times335$.
+
+The correlation matrix is calculated from the covariance matrix according to
+\begin{equation}
+  \label{eq:correlation}
+  Corr_{i,j} = \frac{\mathbf{C}_{i,j}}{\sqrt{\mathbf{C}_{i,i}}\sqrt{\mathbf{C}_{j,j}}}.
+\end{equation}
+Note that the correlation of a variable with itself is 1 by definition.
+The correlation matrices for both of our data sets can be seen below in
+figures \autoref{fig:cmatrix_betoule} and \autoref{cmatrix_rest}.
+
+\TM{TODO: Discuss how the correlation matrices for the two data sets are different
+  and hypothesize on what this might mean.}
+
+\begin{figure}
+ \includegraphics[width=\linewidth]{figures/Betoule_correlation.eps}
+ \caption{Correlation matrix of $\mu_0(z)$ from the
+ \citet{betoule2014} sample.
+ \TM{Need to improve this caption.}}
+ \label{fig:cmatrix_betoule}
+\end{figure}
+
 
 \begin{figure}
  \includegraphics[width=\linewidth]{figures/Rest_correlation.eps}
  \caption{Correlation matrix of $\mu_0(z)$ from the
- \citet{rest2014} sample.}
- \label{fig:cmatrix}
+ \citet{rest2014} sample.
+ \TM{Need to improve this caption.}}
+ \label{fig:cmatrix_rest}
 \end{figure}
 
 \section{Distance Modulus Model}
