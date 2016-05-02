@@ -8,10 +8,16 @@ from cosmosis.datablock import names as section_names
 from cosmosis.datablock import option_section
 from cosmosis.runtime.declare import declare_module
 import numpy as np
+from scipy import integrate
 
 cosmo = section_names.cosmological_parameters
 likes = section_names.likelihoods
 
+"""
+adot/a \propto E_z
+"""
+def E_z(z,om,ode,ok=0):
+    return np.sqrt(om*(1.0+z)**3+ok*(1.0+z)**2+ode)
 
 """
 The setup function runs only once at the start
@@ -43,13 +49,17 @@ def execute(block,config):
 
     #Create a model for mu(z)
     #TODO: decide how to implement this
-    mu_model = z*0 #MODEL GOES HERE
+    dc = np.ones_like(z)
+    for i in range(len(z)):
+        dc[i] = 3000.0/h * integrate.quad(E_z,0,z[i],args=(om,ode))[0]
+    dl = (1+z)*dc
+    mu_model = 5*np.log10(dl)+25
 
     #Calculate the likelihood
-    LL = -1.0
-    #for i in range(len(cov)):
-        #for j in range(len(cov[i])):
-            #LL += -0.5 * (mu[i]-mu_model[i])*icov[i,j]*(mu[j]-mu_model[j])
+    LL = 0.0
+    for i in range(len(cov)):
+        for j in range(len(cov[i])):
+            LL += -0.5 * (mu[i]-mu_model[i])*icov[i,j]*(mu[j]-mu_model[j])
     block[likes,"SNIA_LIKE"]=LL
 
     return 0 #Signal that it finished fine

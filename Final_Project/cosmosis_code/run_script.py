@@ -15,7 +15,8 @@ if do_analysis:
     path = "my_tests/astr513/"
     cosmology = path+"final_cosmology.ini"
     pipeline = path+"final_pipeline.ini"
-    cosmosis = "mpirun -n 4 cosmosis --mpi"
+    cosmosis = "cosmosis"
+    #cosmosis = "mpirun -n 4 cosmosis --mpi"
     
     command = "datapath=%s covpath=%s cosmology=%s %s %s"\
               %(datapath,covpath,cosmology,cosmosis,pipeline)
