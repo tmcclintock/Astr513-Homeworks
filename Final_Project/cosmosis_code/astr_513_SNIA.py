@@ -12,6 +12,7 @@ import numpy as np
 cosmo = section_names.cosmological_parameters
 likes = section_names.likelihoods
 
+
 """
 The setup function runs only once at the start
 """
@@ -45,11 +46,13 @@ def execute(block,config):
     mu_model = z*0 #MODEL GOES HERE
 
     #Calculate the likelihood
-    LL = 0
-    for i in range(len(cov)):
-        for j in range(len(cov[i])):
-            LL += -0.5 * (mu[i]-mu_model[i])*icov[i,j]*(mu[j]-mu_model[j])
-    return LL
+    LL = -1.0
+    #for i in range(len(cov)):
+        #for j in range(len(cov[i])):
+            #LL += -0.5 * (mu[i]-mu_model[i])*icov[i,j]*(mu[j]-mu_model[j])
+    block[likes,"SNIA_LIKE"]=LL
+
+    return 0 #Signal that it finished fine
     
 """
 This function has to be here for design reasons.

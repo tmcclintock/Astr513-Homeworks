@@ -8,14 +8,19 @@ do_analysis = True
 do_postprocess = False
 
 if do_analysis:
-    datapath = "/path/to/the/data"
-    covpath  = "/path/to/the/cov/matrix"
+    base = "/home/tmcclintock/Desktop/Github_stuff/Astr513-Homeworks/Final_Project/Betoule2014Data/"
+    datapath = base+"tablef1.dat"
+    covpath  = base+"tablef2.dat"
     
-    cosmology = "final_cosmology.ini"
-    pipeline = "final_pipeline.ini"
+    path = "my_tests/astr513/"
+    cosmology = path+"final_cosmology.ini"
+    pipeline = path+"final_pipeline.ini"
+    cosmosis = "mpirun -n 4 cosmosis --mpi"
     
-    command = "datapath=%s covpath=%s cosmology=%s cosmosis %s"\
-              %(datapath,covpath,cosmology,pipeline)
+    command = "datapath=%s covpath=%s cosmology=%s %s %s"\
+              %(datapath,covpath,cosmology,cosmosis,pipeline)
+
+    os.system(command)
 
 """
 Now that the code is run, we can do post processing below.
