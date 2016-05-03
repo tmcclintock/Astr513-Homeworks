@@ -17,8 +17,9 @@ verbosity= debug
 
 [pipeline]
 modules = consistency camb planck astr_513_snia
-values = ${COSMOSIS_SRC_DIR}/output_files/astr_513/maxlike_cosmology.ini
-;my_tests/astr513/final_cosmology.ini
+;astr_513_SNIA
+values = ${COSMOSIS_SRC_DIR}/my_tests/astr513/final_cosmology.ini
+;${cosmology}
 likelihoods = planck2015 snia
 extra_output =
 quiet=F

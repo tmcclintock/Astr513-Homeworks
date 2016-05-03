@@ -14,14 +14,17 @@ if do_analysis:
     
     path = "my_tests/astr513/"
     cosmology = path+"final_cosmology.ini"
+    maxlikepipeline = path+"final_maxlike_pipeline.ini"
     pipeline = path+"final_pipeline.ini"
-    cosmosis = "cosmosis"
-    #cosmosis = "mpirun -n 4 cosmosis --mpi"
+    singlecore_cosmosis = "cosmosis"
+    mpi_cosmosis = "mpirun -n 4 cosmosis --mpi"
     
     command = "datapath=%s covpath=%s cosmology=%s %s %s"\
-              %(datapath,covpath,cosmology,cosmosis,pipeline)
-
-    os.system(command)
+              %(datapath,covpath,cosmology,singlecore_cosmosis,maxlikepipeline)
+    os.system(command) #Maxlike
+    command = "datapath=%s covpath=%s cosmology=%s %s %s"\
+              %(datapath,covpath,cosmology,mpi_cosmosis,pipeline)
+    os.system(command) #MCMC
 
 """
 Now that the code is run, we can do post processing below.

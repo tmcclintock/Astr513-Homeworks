@@ -1,9 +1,19 @@
 [runtime]
-sampler = test
-;sampler = emcee
+sampler = emcee
+;sampler = test
 
 [test]
 save_dir = my_tests/my_output
+
+[emcee]
+walkers = 16
+samples = 1000
+nsteps = 100
+
+[output]
+filename = output_files/astr_513/astr_513_chain
+format = text
+verbosity= debug
 
 [pipeline]
 modules = consistency camb planck astr_513_snia
@@ -14,7 +24,7 @@ likelihoods = planck2015 snia
 extra_output =
 quiet=F
 debug=T
-timing=T
+timing=F
 
 [planck]
 file = cosmosis-standard-library/likelihood/planck2015/planck_interface.so
@@ -33,7 +43,7 @@ file = cosmosis-standard-library/utility/consistency/consistency_interface.py
 file = cosmosis-standard-library/boltzmann/camb/camb.so
 mode=all
 lmax=2550
-feedback=2
+feedback=0
 do_tensors=T
 do_lensing=T
 do_nonlinear=T

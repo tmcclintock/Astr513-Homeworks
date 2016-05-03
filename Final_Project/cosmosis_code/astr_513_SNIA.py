@@ -16,8 +16,8 @@ likes = section_names.likelihoods
 """
 adot/a \propto E_z
 """
-def E_z(z,om,ode,ok=0):
-    return np.sqrt(om*(1.0+z)**3+ok*(1.0+z)**2+ode)
+def E_z(z,om,ode,w,ok=0):
+    return np.sqrt(om*(1.0+z)**3+ok*(1.0+z)**2+ode*(1.0+z)**(3.0*(w+1)))
 
 """
 The setup function runs only once at the start
@@ -45,13 +45,13 @@ def execute(block,config):
     #Read in the cosmology
     h = block[cosmo,"h0"]
     om = block[cosmo,"omega_m"]
+    w = block[cosmo,"w"] #DE equation of state
     ode = 1.0 - om #Omega_dark_energy
 
     #Create a model for mu(z)
-    #TODO: decide how to implement this
     dc = np.ones_like(z)
     for i in range(len(z)):
-        dc[i] = 3000.0/h * integrate.quad(E_z,0,z[i],args=(om,ode))[0]
+        dc[i] = 3000.0/h * integrate.quad(E_z,0,z[i],args=(om,ode,w))[0]
     dl = (1+z)*dc
     mu_model = 5*np.log10(dl)+25
 
