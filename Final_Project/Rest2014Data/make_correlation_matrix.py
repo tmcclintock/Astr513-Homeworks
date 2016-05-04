@@ -15,7 +15,7 @@ cov  = np.genfromtxt("covarianceMatrix.dat")
 corr = np.zeros_like(cov)
 for i in range(len(cov)):
     for j in range(len(cov[i])):
-        corr[i,j] = cov[i,j]/(np.sqrt(cov[i,i]*cov[j,j]))
+        corr[i,j] = cov[i,j]/(np.sqrt(abs(cov[i,i])*abs(cov[j,j])))
 
 #Visualize
 import matplotlib.pyplot as plt
@@ -33,4 +33,4 @@ ax.set_ylabel("Redshift $z$",fontsize=fs)
 plt.subplots_adjust(bottom=0.15)
 
 plt.gcf().savefig("Rest_correlation.eps")
-plt.show()
+#plt.show()

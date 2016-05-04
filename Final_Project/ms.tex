@@ -60,12 +60,12 @@
 \begin{document}
 \maketitle
 
+\section{Introduction}
+\label{sec:Intro}
+Type \rom{1}a supernovae (\snea{}) have been instrumental in the discovery of the accelerating expansion of the universe. Presently, {\sn} surveys continue to be pivotal in constraining cosmological parameters. In this paper, we present our analysis of comparing and combining {\sna} inference to those from the Cosmic Microwave Background (CMB) and the Baryonic Acoustic Oscillations (BAO). The constraints from these two probes are taken from \citet{planck2013}. This paper is outlined as follows. In Section 2, the process and importance of {\snea} are summarized. A short description of the Planck mission is given in Section 3. Section 4 describe the two {\sna} surveys whose data we use for our analysis. The significance of using distance modulus data to constrain cosmological parameters is illustrated in Section 5. The CMB and BAO priors taken from \citet{planck2013} are also specified in Section 5. Our results and analysis on the benefit of omitting or including Bayesian priors from other cosmological probes are in Section 6 and Section 7.  
+
 \section{Type \rom{1}a Supernovae}
 \label{sec:SNIa}
-\EW{Should I cite the Nobel Prize information document where I found out about 
-the stuff in the last few sentences? I'm not entirely sure what that would be considered...}
-\TM{No, because it is common knowledge. I think though that since this is meant to emulate
-  a research paper that we don't need to point out that it was what the NP was awarded for.}
 A type \rom{1}a supernova (\sna{}) is a supernova with very little hydrogen or
 helium absorption. It is believed that the progenitor for these special
 supernovae are white dwarfs that are part of a binary system. These white
@@ -88,10 +88,6 @@ standard candle with which to measure distance. They were first used in this way
 Supernova Survey. It was using distances from \snea{} from these two projects that 
 \citet{riess1998} and \citet{perlmutter1999} were able to discover the accelerating expansion 
 rate of the Universe in 1998. 
-%It was for this work that Saul Perlmutter, Brian P. Schmidt, 
-%and Adam G. Reiss won the Nobel Prize in physics in 2011.
-\TM{Changed grammer in this section, since ``we'' did not actually do these things.
-  Review and collapse bubbles.}
 
 \section{Planck 2015 Results}
 \label{sec:planck}
@@ -171,23 +167,15 @@ curves, light curve fit information, covariance matrix, and each {\sn}
 host information.\footnote{Data can be accessed at 
 \url{http://ipp0012.ifa.hawaii.edu/SN1aLC/}}. For our analysis, we 
 utilized the redshifts, distance moduli, and covariance matrix of the 
-final sample of 310 {{\snea} or 335 light curves.
-\TM{There is some kind of undefined reference error in the above line. 
-  It doesn't alter the pdf document, but can we figure out what is going on?}
+final sample of 310 {\snea} or 335 light curves.
 
 \subsection{Covariances}
 \label{sec:covariances}
 The publicly released covariance matrix from \citet{rest2014} 
-is comprised of systematic errors for the final sample. These systematics, 
-defined in \citet{scolnic2014}, include flux calibration errors, 
-selection effects, light curve fitting, host galaxy relations, Milky 
-Way extinction corrections, and coherent velocity flows. Calculating 
-the covariance matrix involves varying a systematic parameter and determining 
-the difference between the original distance and the new distance. 
-The covariance between {\sn} $i$ and {\sn} $j$ is 
+is comprised of systematic and statistical errors for the final sample. The total covariance matrix is defined as $\mathbf{C}= \mathbf{D}_{\textnormal{stats}}+\mathbf{C}_{\textnormal{sys}}$. The statistical matrix has only diagonal elements, which take into account errors in light curve fit parameters and intrinsic scatter due to luminosity and color variation. These statistical errors are added in quadratures. The systematics, defined in \citet{scolnic2014}, include flux calibration errors, selection effects, light curve fitting, host galaxy relations, Milky Way extinction corrections, and coherent velocity flows. Calculating the systematic matrix involves varying a systematic parameter and determining the difference between the original distance and the new distance. The systematic covariance between {\sn} $i$ and {\sn} $j$ is 
 \begin{equation}
 \label{eq:RestCovMatrix}
-C_{ij}=\displaystyle \sum_{k = 1}^K \left(\frac{\partial \mu_i}{\partial S_k}\right)\left(\frac{\partial \mu_j}{\partial S_k}\right)\left(\sigma_{S_k}\right)^2,
+C_{ij,\textnormal{sys}}=\displaystyle \sum_{k = 1}^K \left(\frac{\partial \mu_i}{\partial S_k}\right)\left(\frac{\partial \mu_j}{\partial S_k}\right)\left(\sigma_{S_k}\right)^2,
 \end{equation}
 where the summation is over $K$ systematics, $\sigma_{S_k}$ is each 
 systematic error magnitude, and $\partial \mu$ is the difference in 
@@ -220,7 +208,7 @@ For both of these data sets, the covariance matrix can be visualized using a rel
 quantity known as the correlation matrix $Corr$. When two quantities are (anti)correlated,
 the value of one quantity (decreases)increases when the other quantity increases.
 If the variables one has measured are independent, then the correlation between
-differen variables should be $\approx0$.
+different variables should be $\approx0$.
 
 A correlation matrix for $N$ variables is $N\times N$ in size, and the $ij$th
 element is the correlation between the $i$th and $j$th variables. Therefore, 
@@ -234,7 +222,7 @@ The correlation matrix is calculated from the covariance matrix according to
 \end{equation}
 Note that the correlation of a variable with itself is 1 by definition.
 The correlation matrices for both of our data sets can be seen below in
-figures \autoref{fig:cmatrix_betoule} and \autoref{cmatrix_rest}.
+figures \autoref{fig:cmatrix_betoule} and \autoref{fig:cmatrix_rest}.
 
 \TM{TODO: Discuss how the correlation matrices for the two data sets are different
   and hypothesize on what this might mean.}
@@ -258,16 +246,14 @@ figures \autoref{fig:cmatrix_betoule} and \autoref{cmatrix_rest}.
 
 \section{Distance Modulus Model}
 \label{sec:model}
-\LC{Need more here but I wrote most of the relevant eqns}
-\EW{Do we want/need citations for the equations here?}
 The main objective of \citet{betoule2014} and \citet{rest2014} is 
 to place constraints on cosmological parameters $\Omega_M$, $\Omega_\Lambda$, 
-and $w$. In order to so, we must examine the relationship between distance 
+$\Omega_k$, and $w$. In order to so, we must examine the relationship between distance 
 modulus and cosmology. The distance modulus $\mu$ is determined from 
 the luminosity distance $d_L$ by 
 \begin{equation}
 \label{eq:mu_dL}
-\mu=5 \text{log}(d_L)+25. 
+\mu=5 \log\left(\frac{d_L}{1 \mathrm{Mpc}}\right)+25. 
 \end{equation}
 The luminosity distance depends on the cosmology by 
 \begin{equation}
@@ -289,10 +275,7 @@ and the function $H(z)$ is
 \label{eq:hubbleFunction}
 H(z)= H_0\displaystyle\left[\Omega_M(1+z)^3+\Omega_{\Lambda}(1+z)^{3(1+w)}+\Omega_k(1+z)^2\right]^{1/2}.
 \end{equation}
-Three (?) cosmologies are of interest to us: 
-\LC{Not sure which ones we're interested in. $\Lambda CDM$, $\Omega_M=1$, ?}
-\TM{I think there are only two, one with $\Omega_k=0$ and one with it
-  being unconstrained.}
+Two cosmologies are of interest to us: a flat universe where $\Omega_k=0$ and a universe where $\Omega_k$ is unconstrained. 
 
 \subsection{Likelihood}
 \label{sec:likelihood}
