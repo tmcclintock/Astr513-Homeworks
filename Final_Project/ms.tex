@@ -62,11 +62,11 @@
 
 \section{Introduction}
 \label{sec:Intro}
-Type \rom{1}a supernovae (\snea{}) have been instrumental in the discovery of the accelerating expansion of the universe. Presently, {\sn} surveys continue to be pivotal in constraining cosmological parameters. In this paper, we present our analysis of comparing and combining {\sna} inference to those from the Cosmic Microwave Background (CMB) and the Baryonic Acoustic Oscillations (BAO). The constraints from these two probes are taken from \citet{planck2013}. This paper is outlined as follows. In Section 2, the process and importance of {\snea} are summarized. A short description of the Planck mission is given in Section 3. Section 4 describe the two {\sna} surveys whose data we use for our analysis. The significance of using distance modulus data to constrain cosmological parameters is illustrated in Section 5. The CMB and BAO priors taken from \citet{planck2013} are also specified in Section 5. Our results and analysis on the benefit of omitting or including Bayesian priors from other cosmological probes are in Section 6 and Section 7.  
+Type \rom{1}a supernovae (\snea{}) have been instrumental in the discovery of the accelerating expansion of the universe. Presently, {\sn} surveys continue to be pivotal in constraining cosmological parameters. In this paper, we present our analysis of comparing and combining {\sna} inference of cosmological parameters to those from other cosmological probes. In particular, we utilize the constraints from the Cosmic Microwave Background (CMB) and the Baryonic Acoustic Oscillations (BAO) that are gathered in \citet{planck2013}. We look at two cosmologies in our analysis: the $\Lambda \textnormal{CDM}$ universe and the wCDM universe. This paper is outlined as follows. In Section 2, the process and importance of {\snea} are summarized. A short description of the Planck mission is given in Section 3. Section 4 describe the two {\sna} surveys whose data we use for our analysis. The significance of using distance modulus data to constrain cosmological parameters is illustrated in Section 5. The CMB and BAO priors taken from \citet{planck2013} are also specified in Section 5. Our results and analysis on the benefit of omitting or including Bayesian priors from other cosmological probes are in Section 6 and Section 7.  
 
 \section{Type \rom{1}a Supernovae}
 \label{sec:SNIa}
-A type \rom{1}a supernova (\sna{}) is a supernova with very little hydrogen or
+A type \rom{1}a supernova is a supernova with very little hydrogen or
 helium absorption. It is believed that the progenitor for these special
 supernovae are white dwarfs that are part of a binary system. These white
 dwarfs accrete mass from their companion stars or merge with a companion white
@@ -92,7 +92,7 @@ rate of the Universe in 1998.
 \section{Planck 2015 Results}
 \label{sec:planck}
 In 2009 the European Space Agency launched the \Planck satellite in order
-to measure the Cosmis Microwave Background (CMB) with unparalleled precision.
+to measure the Cosmis Microwave Background with unparalleled precision.
 By measuring the small anisotropies in the temperature of the CMB across
 the entire sky one calculates the angular power spectrum, which can be
 modeled using first principles (see, e.g., \citet{dodelson2003}).
@@ -268,14 +268,15 @@ $\mathcal{S}_{k}$ depends on the curvature density $\Omega_k$ in that
     \text{sin}(x),&  \Omega_k < 0\\
     x,& \Omega_k = 0\\
     \text{sinh}(x),& \Omega_k > 0
-\end{cases}
+\end{cases}.
 \]
-and the function $H(z)$ is 
+The function $H(z)$ is expressed as 
 \begin{equation}
 \label{eq:hubbleFunction}
-H(z)= H_0\displaystyle\left[\Omega_M(1+z)^3+\Omega_{\Lambda}(1+z)^{3(1+w)}+\Omega_k(1+z)^2\right]^{1/2}.
-\end{equation}
-Two cosmologies are of interest to us: a flat universe where $\Omega_k=0$ and a universe where $\Omega_k$ is unconstrained. 
+H(z)= H_0\displaystyle\left[\Omega_M(1+z)^3+\Omega_{\Lambda}(1+z)^{3(1+w)}+\Omega_k(1+z)^2\right]^{1/2},
+\end{equation} where the Hubble constant $H_0$ can be written in terms of a dimensionless Hubble parameter $h$ by $H_0=100h \mathrm{kms^{-1}Mpc^{-1}}$.
+
+Two cosmologies are of interest to us: the $\Lambda \textnormal{CDM}$ universe and the wCDM universe. In the $\Lambda \textnormal{CDM}$ universe, $w=-1$ and constraints are placed on $\Omega_M$ and $h$. The wCDM universe is a one-parameter extension of $\Lambda \textnormal{CDM}$ in which $w$ is an arbitrary parameter for a constant dark energy equation of state. In wCDM, constraints are placed on $\Omega_M$, $w$, and $h$. In both cosmologies, the universe is spatially flat ($\Omega_k = 0$) and thus $\Omega_{\Lambda}=1-\Omega_M$. 
 
 \subsection{Likelihood}
 \label{sec:likelihood}
@@ -288,6 +289,8 @@ Two cosmologies are of interest to us: a flat universe where $\Omega_k=0$ and a 
 \label{sec:results}
 \TM{Discuss the results and show the corner plots. Example plot included.
   We should have one corner plot without priors and one with priors.}
+\LC{Not sure where to put why we couldn't do the full analysis of Rest's data. I'm putting it here for now.}
+A complete analysis using the data from \citet{rest2014} is not done in our paper since there are several issues with the publicly released data. It is not apparent which uncertainties belonged to the statistical covariance matrix since only the systematic covariance matrix is clearly presented. Moreover, intrinsic dispersion of the data and photometric errors of the distances depend on nuisance parameters in addition to the covariances between the fit parameters. Fine-tuning nuisance parameters places a significant time restraint on our work and is beyond the scope of this paper. For these reasons, we only present the results for \citet{rest2014} that do not include the priors from \citet{planck2013}. 
 
 \begin{figure}
  \includegraphics[width=\linewidth]{figures/corner_example.eps}
