@@ -317,14 +317,15 @@ and $h$. In both cosmologies, the universe is spatially flat
 Using the above model for the distance modulus allows us to write a
 probability that a model can generate our data:
 %
-\begin{equation}
+\begin{eqnarray}
   \label{eq:likelihood}
-  P(\mu(z)|\mathrm{cos}) = \frac{1}{\sqrt{2\pi|\mathbf{C}|}}\exp
-  \left[-\frac{1}{2}\sum_{i,j=0}^{N_{samples}}\left(\mu(z) - \mu_{\mathrm{model}}(z)\right)_i\mathbf{C}^{-1}_{i,j}\left(\mu(z) - \mu_{\mathrm{model}}(z)\right)_j\right]
-\end{equation}
+  P(\mu(z)|\mathrm{cosmo}) = \frac{1}{\sqrt{2\pi|\mathbf{C}|}}\exp
+  \left[-\frac{1}{2}& \\ \sum_{i,j=0}^{N_{samples}}\left(\mu(z) - \mu_{\mathrm{model}}(z)\right)_i 
+    \mathbf{C}^{-1}_{i,j}\left(\mu(z) - \mu_{\mathrm{model}}(z)\right)_j\right]
+\end{eqnarray}
 %
 where $\mathbf{C}$ is the full covariance matrix between all of the $N_{samples}$ 
-in the data, and $\mathrm{cos}$ represents the cosmology that we are investigating
+in the data, and $\mathrm{cosmo}$ represents the cosmology that we are investigating
 (e.g. flat $\Lambda$CDM, $wCDM$, etc.). 
 This is not the full picture though, since we must employ
 Bayes' Theorum in order to include any priors on our choice of 
@@ -333,7 +334,7 @@ parameters given our data
 %
 \begin{equation}
   \label{eq:posterior}
-  P(\mathrm{cos}|\mu(z)) = P_{prior}(\mathrm{cos}) P(\mu(z)|\mathrm{cos}).
+  P(\mathrm{cosmo}|\mu(z)) = P_{prior}(\mathrm{cosmo}) P(\mu(z)|\mathrm{cosmo}).
 \end{equation}
 %
 For this work we investigate a combination of priors. \Cosmosis is implemented
