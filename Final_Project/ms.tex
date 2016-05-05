@@ -203,8 +203,8 @@ between the original distance and the new distance. The systematic covariance
 between {\sn} $i$ and {\sn} $j$ is 
 %
 \begin{equation}
-\label{eq:RestCovMatrix}
-C_{ij,\textnormal{sys}}=\displaystyle \sum_{k = 1}^K \left(\frac{\partial \mu_i}{\partial S_k}\right)\left(\frac{\partial \mu_j}{\partial S_k}\right)\left(\sigma_{S_k}\right)^2,
+  \label{eq:RestCovMatrix}
+  C_{ij,\textnormal{sys}}=\displaystyle \sum_{k = 1}^K \left(\frac{\partial \mu_i}{\partial S_k}\right)\left(\frac{\partial \mu_j}{\partial S_k}\right)\left(\sigma_{S_k}\right)^2,
 \end{equation}
 %
 where the summation is over $K$ systematics, $\sigma_{S_k}$ is each 
@@ -257,24 +257,21 @@ The correlation matrix is calculated from the covariance matrix according to
 Note that the correlation of a variable with itself is 1 by definition.
 The correlation matrices for both of our data sets can be seen below in
 figures \autoref{fig:cmatrix_betoule} and \autoref{fig:cmatrix_rest}.
-
-\TM{TODO: Discuss how the correlation matrices for the two data sets are different
-  and hypothesize on what this might mean.}
-
+%
 \begin{figure}
   \includegraphics[width=0.8\linewidth]{figures/Betoule_correlation.eps}
   \caption{Correlation matrix of $\mu_0(z)$ from the
-    \citet{betoule2014} sample.
-    \TM{Need to improve this caption.}}
+    \citet{betoule2014} sample. Overall very few correlations exist between
+    samples, likely due to the averaging over redshift bins.}
   \label{fig:cmatrix_betoule}
 \end{figure}
-
-
+%
 \begin{figure}
   \includegraphics[width=0.8\linewidth]{figures/Rest_correlation.eps}
   \caption{Correlation matrix of $\mu_0(z)$ from the
-    \citet{rest2014} sample.
-    \TM{Need to improve this caption.}}
+    \citet{rest2014} sample. Significant correlation exist between
+    different samples due to dependencies on systematic variables
+    as seen in \autoref{eq:RestCovMatrix}.}
   \label{fig:cmatrix_rest}
 \end{figure}
 
@@ -396,9 +393,10 @@ we only present the results for \citet{rest2014} that do not include the priors
 from \citet{planck2013}. 
 
 \begin{figure}
- \includegraphics[width=\linewidth]{figures/corner_example.eps}
- \caption{Example corner plot.}
- \label{fig:corner}
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/corner_example.eps}
+  \caption{Example corner plot.}
+  \label{fig:corner}
 \end{figure}
 
 \section{Conclusions}
