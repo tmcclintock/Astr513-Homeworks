@@ -155,10 +155,12 @@ given on a grid of redshifts. The distance modulus can then be well
 approximated by a piecewise linear function of $\log(z)$ that is given 
 in a single redshift bin $z_b \le z < z_{b+1}$ as 
 \citep[see][Appendix E.1]{betoule2014}
+%
 \begin{equation}
 \label{eq:binnedMu}
 \bar{\mu}(z) = (1 - \alpha) \mu_b + \alpha \mu_{b+1},
 \end{equation}
+%
 where they have defined 
 $\alpha = \log\left(\frac{z}{z_b}\right)/\log\left(\frac{z_{b+1}}{z_b}\right)$ 
 and $\mu_i$ is the distance modulus at control point $z_i$. 
@@ -199,10 +201,12 @@ extinction corrections, and coherent velocity flows. Calculating the systematic
 matrix involves varying a systematic parameter and determining the difference 
 between the original distance and the new distance. The systematic covariance 
 between {\sn} $i$ and {\sn} $j$ is 
+%
 \begin{equation}
 \label{eq:RestCovMatrix}
 C_{ij,\textnormal{sys}}=\displaystyle \sum_{k = 1}^K \left(\frac{\partial \mu_i}{\partial S_k}\right)\left(\frac{\partial \mu_j}{\partial S_k}\right)\left(\sigma_{S_k}\right)^2,
 \end{equation}
+%
 where the summation is over $K$ systematics, $\sigma_{S_k}$ is each 
 systematic error magnitude, and $\partial \mu$ is the difference in 
 distance modulus from varying a systematic parameter.
@@ -216,10 +220,12 @@ bias correction, a mass step uncertainty introduced when correcting magnitudes d
 to host mass, Galactic extinction, peculiar velocities, and contamination by 
 non-\sna{}. They then propagate these errors to the distance modulus and use three 
 terms to account for uncertainty in cosmological redshift by the equation
+%
 \begin{equation}
 \label{eq:BetouleCovMatrix}
 \mathbf{C} = \mathbf{A} \mathbf{C}_\mathbf{\eta} \mathbf{A}^\dag + \mathrm{diag}\left(\frac{5 \sigma_z}{z \log 10}\right)^2 + \mathrm{diag}\left(\sigma_{\mathrm{lens}}^2\right) + \mathrm{diag}\left(\sigma_{\mathrm{coh}}^2\right),
 \end{equation}
+%
 where $\mathbf{A}$ is the matrix of coefficients in the distance modulus, 
 and redshift uncertainty is accounted for in the first diagonal term due to 
 peculiar velocities, the second due to magnitude variation from gravitational lensing, 
@@ -242,10 +248,12 @@ the correlation matrix for \citet{betoule2014} is $31\times31$, while
 for \citet{rest2014} is $335\times335$.
 
 The correlation matrix is calculated from the covariance matrix according to
+%
 \begin{equation}
   \label{eq:correlation}
   Corr_{i,j} = \frac{\mathbf{C}_{i,j}}{\sqrt{\mathbf{C}_{i,i}}\sqrt{\mathbf{C}_{j,j}}}.
 \end{equation}
+%
 Note that the correlation of a variable with itself is 1 by definition.
 The correlation matrices for both of our data sets can be seen below in
 figures \autoref{fig:cmatrix_betoule} and \autoref{fig:cmatrix_rest}.
@@ -277,15 +285,19 @@ to place constraints on cosmological parameters $\Omega_M$, $\Omega_\Lambda$,
 $\Omega_k$, and $w$. In order to so, we must examine the relationship between distance 
 modulus and cosmology. The distance modulus $\mu$ is determined from 
 the luminosity distance $d_L$ by 
+%
 \begin{equation}
-\label{eq:mu_dL}
-\mu=5 \log\left(\frac{d_L}{1 \mathrm{Mpc}}\right)+25. 
+  \label{eq:mu_dL}
+  \mu=5 \log\left(\frac{d_L}{1 \mathrm{Mpc}}\right)+25. 
 \end{equation}
+%
 The luminosity distance depends on the cosmology by 
+%
 \begin{equation}
 \label{eq:luminosityDistance}
 d_L(z; w, \Omega_M, \Omega_\Lambda, H_0)= (1+z)|\Omega_k|^{-1/2}\mathcal{S}_{k}\displaystyle\left[c|\Omega_k|^{1/2}\int_{0}^{z}\frac{dz'}{H(z')}\right],
 \end{equation}
+%
 where $\Omega_k \equiv 1-\Omega_M-\Omega_{\Lambda}$. The function 
 $\mathcal{S}_{k}$ depends on the curvature density $\Omega_k$ in that 
 \[
@@ -297,10 +309,13 @@ $\mathcal{S}_{k}$ depends on the curvature density $\Omega_k$ in that
 \end{cases}.
 \]
 The function $H(z)$ is expressed as 
+%
 \begin{equation}
-\label{eq:hubbleFunction}
-H(z)= H_0\displaystyle\left[\Omega_M(1+z)^3+\Omega_{\Lambda}(1+z)^{3(1+w)}+\Omega_k(1+z)^2\right]^{1/2},
-\end{equation} where the Hubble constant $H_0$ can be written in terms of a 
+  \label{eq:hubbleFunction}
+  H(z)= H_0\displaystyle\left[\Omega_M(1+z)^3+\Omega_{\Lambda}(1+z)^{3(1+w)}+\Omega_k(1+z)^2\right]^{1/2},
+\end{equation}
+%
+where the Hubble constant $H_0$ can be written in terms of a 
 dimensionless Hubble parameter $h$ by $H_0=100h \mathrm{km\ s^{-1}Mpc^{-1}}$.
 
 Two cosmologies are of interest to us: the $\Lambda \textnormal{CDM}$ 
@@ -320,7 +335,7 @@ probability that a model can generate our data:
 \begin{eqnarray}
   \label{eq:likelihood}
   P(\mu(z)|\mathrm{cosmo}) = \frac{1}{\sqrt{2\pi|\mathbf{C}|}}\exp
-  \left[-\frac{1}{2}& \\ \sum_{i,j=0}^{N_{samples}}\left(\mu(z) - \mu_{\mathrm{model}}(z)\right)_i 
+  \left[-\frac{1}{2} \sum_{i,j=0}^{N_{samples}}\left(\mu(z) - \mu_{\mathrm{model}}(z)\right)_i 
     \mathbf{C}^{-1}_{i,j}\left(\mu(z) - \mu_{\mathrm{model}}(z)\right)_j\right]
 \end{eqnarray}
 %
@@ -339,10 +354,25 @@ parameters given our data
 %
 For this work we investigate a combination of priors. \Cosmosis is implemented
 in a way that requires the user to provide bounds on the parameter space, which we
-detail for each parameter in Table~XXX
-\TM{Make this table. Just look at the cosmology.ini files.}
+detail for each parameter in \autoref{tab:priors}
 Within those bounds, we investigated using a flat prior $P_{prior}=1$ and
 \Planck priors.
+
+\begin{table}
+  \centering
+  \caption{Bounds on cosmological parameters 
+    entering \autoref{eq:posterior}. Our sampler requires
+    bounds in order to both populate the parameter space with
+    parallelized samplers and to calculate an appropriate width
+    for the step size.}
+  \label{tab:priors}
+  \begin{tabular}{lll}
+    Parameter & Description & Bounds \\ \hline
+    $h$ & Hubble constant$/100$ & $[0,2]$ \\
+    $\Omega_M$ & Matter fraction at $z=0$ & $[0,1]$ \\
+    $w$ & Dark energy E.O.S. & $[-2,0]$\\
+  \end{tabular}
+\end{table}
 
 \subsection{Planck Priors}
 \label{sec:planck_priors}
