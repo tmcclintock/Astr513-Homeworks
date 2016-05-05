@@ -62,7 +62,22 @@
 
 \section{Introduction}
 \label{sec:Intro}
-Type \rom{1}a supernovae (\snea{}) have been instrumental in the discovery of the accelerating expansion of the universe. Presently, {\sn} surveys continue to be pivotal in constraining cosmological parameters. In this paper, we present our analysis of comparing and combining {\sna} inference of cosmological parameters to those from other cosmological probes. In particular, we utilize the constraints from the Cosmic Microwave Background (CMB) and the Baryonic Acoustic Oscillations (BAO) that are gathered in \citet{planck2013}. We look at two cosmologies in our analysis: the $\Lambda \textnormal{CDM}$ universe and the wCDM universe. This paper is outlined as follows. In Section 2, the process and importance of {\snea} are summarized. A short description of the Planck mission is given in Section 3. Section 4 describe the two {\sna} surveys whose data we use for our analysis. The significance of using distance modulus data to constrain cosmological parameters is illustrated in Section 5. The CMB and BAO priors taken from \citet{planck2013} are also specified in Section 5. Our results and analysis on the benefit of omitting or including Bayesian priors from other cosmological probes are in Section 6 and Section 7.  
+Type \rom{1}a supernovae (\snea{}) have been instrumental in the discovery 
+of the accelerating expansion of the universe. Presently, {\sn} surveys continue 
+to be pivotal in constraining cosmological parameters. In this paper, we present 
+our analysis of comparing and combining {\sna} inference of cosmological parameters 
+to those from other cosmological probes. In particular, we utilize the constraints 
+from the Cosmic Microwave Background (CMB) and the Baryonic Acoustic Oscillations 
+(BAO) that are gathered in \citet{planck2013}. We look at two cosmologies in our 
+analysis: the $\Lambda \textnormal{CDM}$ universe and the wCDM universe. This 
+paper is outlined as follows. In Section 2, the process and importance of {\snea} 
+are summarized. A short description of the Planck mission is given in Section 3. 
+Section 4 describe the two {\sna} surveys whose data we use for our analysis. The 
+significance of using distance modulus data to constrain cosmological parameters 
+is illustrated in Section 5. The CMB and BAO priors taken from \citet{planck2013} 
+are also specified in Section 5. Our results and analysis on the benefit of omitting 
+or including Bayesian priors from other cosmological probes 
+are in Section 6 and Section 7.  
 
 \section{Type \rom{1}a Supernovae}
 \label{sec:SNIa}
@@ -172,7 +187,18 @@ final sample of 310 {\snea} or 335 light curves.
 \subsection{Covariances}
 \label{sec:covariances}
 The publicly released covariance matrix from \citet{rest2014} 
-is comprised of systematic and statistical errors for the final sample. The total covariance matrix is defined as $\mathbf{C}= \mathbf{D}_{\textnormal{stats}}+\mathbf{C}_{\textnormal{sys}}$. The statistical matrix has only diagonal elements, which take into account errors in light curve fit parameters and intrinsic scatter due to luminosity and color variation. These statistical errors are added in quadratures. The systematics, defined in \citet{scolnic2014}, include flux calibration errors, selection effects, light curve fitting, host galaxy relations, Milky Way extinction corrections, and coherent velocity flows. Calculating the systematic matrix involves varying a systematic parameter and determining the difference between the original distance and the new distance. The systematic covariance between {\sn} $i$ and {\sn} $j$ is 
+is comprised of systematic and statistical errors for the final sample. 
+The total covariance matrix is defined as 
+$\mathbf{C}= \mathbf{D}_{\textnormal{stats}}+\mathbf{C}_{\textnormal{sys}}$. The 
+statistical matrix has only diagonal elements, which take into account errors 
+in light curve fit parameters and intrinsic scatter due to luminosity and 
+color variation. These statistical errors are added in quadratures. The 
+systematics, defined in \citet{scolnic2014}, include flux calibration errors, 
+selection effects, light curve fitting, host galaxy relations, Milky Way 
+extinction corrections, and coherent velocity flows. Calculating the systematic 
+matrix involves varying a systematic parameter and determining the difference 
+between the original distance and the new distance. The systematic covariance 
+between {\sn} $i$ and {\sn} $j$ is 
 \begin{equation}
 \label{eq:RestCovMatrix}
 C_{ij,\textnormal{sys}}=\displaystyle \sum_{k = 1}^K \left(\frac{\partial \mu_i}{\partial S_k}\right)\left(\frac{\partial \mu_j}{\partial S_k}\right)\left(\sigma_{S_k}\right)^2,
@@ -274,23 +300,69 @@ The function $H(z)$ is expressed as
 \begin{equation}
 \label{eq:hubbleFunction}
 H(z)= H_0\displaystyle\left[\Omega_M(1+z)^3+\Omega_{\Lambda}(1+z)^{3(1+w)}+\Omega_k(1+z)^2\right]^{1/2},
-\end{equation} where the Hubble constant $H_0$ can be written in terms of a dimensionless Hubble parameter $h$ by $H_0=100h \mathrm{kms^{-1}Mpc^{-1}}$.
+\end{equation} where the Hubble constant $H_0$ can be written in terms of a 
+dimensionless Hubble parameter $h$ by $H_0=100h \mathrm{km\ s^{-1}Mpc^{-1}}$.
 
-Two cosmologies are of interest to us: the $\Lambda \textnormal{CDM}$ universe and the wCDM universe. In the $\Lambda \textnormal{CDM}$ universe, $w=-1$ and constraints are placed on $\Omega_M$ and $h$. The wCDM universe is a one-parameter extension of $\Lambda \textnormal{CDM}$ in which $w$ is an arbitrary parameter for a constant dark energy equation of state. In wCDM, constraints are placed on $\Omega_M$, $w$, and $h$. In both cosmologies, the universe is spatially flat ($\Omega_k = 0$) and thus $\Omega_{\Lambda}=1-\Omega_M$. 
+Two cosmologies are of interest to us: the $\Lambda \textnormal{CDM}$ 
+universe and the wCDM universe. In the $\Lambda \textnormal{CDM}$ 
+universe, $w=-1$ and constraints are placed on $\Omega_M$ and $h$. 
+The wCDM universe is a one-parameter extension of $\Lambda \textnormal{CDM}$ 
+in which $w$ is an arbitrary parameter for a constant dark energy 
+equation of state. In wCDM, constraints are placed on $\Omega_M$, $w$, 
+and $h$. In both cosmologies, the universe is spatially flat 
+($\Omega_k = 0$) and thus $\Omega_{\Lambda}=1-\Omega_M$. 
 
 \subsection{Likelihood}
 \label{sec:likelihood}
-\TM{This has our likelihood.}
+Using the above model for the distance modulus allows us to write a
+probability that a model can generate our data:
+%
+\begin{equation}
+  \label{eq:likelihood}
+  P(\mu(z)|\mathrm{cos}) = \frac{1}{\sqrt{2\pi|\mathbf{C}|}}\exp
+  \left[-\frac{1}{2}\sum_{i,j=0}^{N_{samples}}\left(\mu(z) - \mu_{\mathrm{model}}(z)\right)_i\mathbf{C}^{-1}_{i,j}\left(\mu(z) - \mu_{\mathrm{model}}(z)\right)_j\right]
+\end{equation}
+%
+where $\mathbf{C}$ is the full covariance matrix between all of the $N_{samples}$ 
+in the data, and $\mathrm{cos}$ represents the cosmology that we are investigating
+(e.g. flat $\Lambda$CDM, $wCDM$, etc.). 
+This is not the full picture though, since we must employ
+Bayes' Theorum in order to include any priors on our choice of 
+parameters and recover the posterior distribution function of our
+parameters given our data
+%
+\begin{equation}
+  \label{eq:posterior}
+  P(\mathrm{cos}|\mu(z)) = P_{prior}(\mathrm{cos}) P(\mu(z)|\mathrm{cos}).
+\end{equation}
+%
+For this work we investigate a combination of priors. \Cosmosis is implemented
+in a way that requires the user to provide bounds on the parameter space, which we
+detail for each parameter in Table~XXX
+\TM{Make this table. Just look at the cosmology.ini files.}
+Within those bounds, we investigated using a flat prior $P_{prior}=1$ and
+\Planck priors.
 
 \subsection{Planck Priors}
 \label{sec:planck_priors}
+\TM{The only thing we really require is a corner plot of {\it just} the priors.}
 
 \section{Results}
 \label{sec:results}
 \TM{Discuss the results and show the corner plots. Example plot included.
   We should have one corner plot without priors and one with priors.}
-\LC{Not sure where to put why we couldn't do the full analysis of Rest's data. I'm putting it here for now.}
-A complete analysis using the data from \citet{rest2014} is not done in our paper since there are several issues with the publicly released data. It is not apparent which uncertainties belonged to the statistical covariance matrix since only the systematic covariance matrix is clearly presented. Moreover, intrinsic dispersion of the data and photometric errors of the distances depend on nuisance parameters in addition to the covariances between the fit parameters. Fine-tuning nuisance parameters places a significant time restraint on our work and is beyond the scope of this paper. For these reasons, we only present the results for \citet{rest2014} that do not include the priors from \citet{planck2013}. 
+\LC{Not sure where to put why we couldn't do the full analysis of Rest's data. 
+  I'm putting it here for now.}
+A complete analysis using the data from \citet{rest2014} is not done 
+in our paper since there are several issues with the publicly released 
+data. It is not apparent which uncertainties belonged to the statistical 
+covariance matrix since only the systematic covariance matrix is clearly 
+presented. Moreover, intrinsic dispersion of the data and photometric errors 
+of the distances depend on nuisance parameters in addition to the covariances 
+between the fit parameters. Fine-tuning nuisance parameters places a significant 
+time restraint on our work and is beyond the scope of this paper. For these reasons, 
+we only present the results for \citet{rest2014} that do not include the priors 
+from \citet{planck2013}. 
 
 \begin{figure}
  \includegraphics[width=\linewidth]{figures/corner_example.eps}
