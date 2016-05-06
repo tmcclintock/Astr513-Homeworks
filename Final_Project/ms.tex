@@ -31,7 +31,7 @@
 \newcommand\LC[1]{\todo[color=magenta!40, inline, size=\small]{LC: #1}}
 
 \newcommand\Planck{{\it Planck}\ }
-\newcommand\Cosmosis{{\it Cosmosis}\ }
+\newcommand\CosmoSIS{{\it CosmoSIS}\ }
 
 
 % Roman numerals command
@@ -71,7 +71,7 @@ from the Cosmic Microwave Background (CMB) and the Baryonic Acoustic Oscillation
 (BAO) that are gathered in \citet{planck2013}. We look at two cosmologies in our 
 analysis: the $\Lambda \textnormal{CDM}$ universe and the wCDM universe. This 
 paper is outlined as follows. In Section 2, the process and importance of {\snea} 
-are summarized. A short description of the Planck mission is given in Section 3. 
+are summarized. A short description of the \Planck mission is given in Section 3. 
 Section 4 describe the two {\sna} surveys whose data we use for our analysis. The 
 significance of using distance modulus data to constrain cosmological parameters 
 is illustrated in Section 5. The CMB and BAO priors taken from \citet{planck2013} 
@@ -123,7 +123,7 @@ in our {\sna} model.
 \citet{planck2013} report marginalized
 posterior distributions for all parameters,
 which we report in Table~XXX. This prior is implemented
-in the planck2015 module implemented in \Cosmosis \citep{cosmosis}.
+in the planck2015 module implemented in \CosmoSIS \citep{cosmosis}.
 
 \section{Data}
 \label{sec:data}
@@ -315,14 +315,20 @@ The function $H(z)$ is expressed as
 where the Hubble constant $H_0$ can be written in terms of a 
 dimensionless Hubble parameter $h$ by $H_0=100h \mathrm{km\ s^{-1}Mpc^{-1}}$.
 
-Two cosmologies are of interest to us: the $\Lambda \textnormal{CDM}$ 
-universe and the wCDM universe. In the $\Lambda \textnormal{CDM}$ 
+Two cosmologies are of interest to us: the  $\Lambda$CDM 
+universe and the $w$CDM universe. In the  $\Lambda$CDM 
 universe, $w=-1$ and constraints are placed on $\Omega_M$ and $h$. 
-The wCDM universe is a one-parameter extension of $\Lambda \textnormal{CDM}$ 
+The $w$CDM universe is a one-parameter extension of  $\Lambda$CDM 
 in which $w$ is an arbitrary parameter for a constant dark energy 
-equation of state. In wCDM, constraints are placed on $\Omega_M$, $w$, 
+equation of state. In $w$CDM, constraints are placed on $\Omega_M$, $w$, 
 and $h$. In both cosmologies, the universe is spatially flat 
 ($\Omega_k = 0$) and thus $\Omega_{\Lambda}=1-\Omega_M$. 
+
+\subsection{CosmoSIS}
+\label{sec:CosmoSIS}
+\LC{I'll write more later if need be.}
+\CosmoSIS is a framework that connects multiple existing codes as modules in order to do cosmological parameter estimation. Users can utilize existing codes or use their own codes for modules. For our analysis, \CosmoSIS provides a convenient way to link together the Code for Anisotropies in the Microwave Background (CAMB), the \Planck likelihood code (our priors), and our {\sn} likelihood code in a pipeline. 
+
 
 \subsection{Likelihood}
 \label{sec:likelihood}
@@ -338,7 +344,7 @@ probability that a model can generate our data:
 %
 where $\mathbf{C}$ is the full covariance matrix between all of the $N_{samples}$ 
 in the data, and $\mathrm{cosmo}$ represents the cosmology that we are investigating
-(e.g. flat $\Lambda$CDM, $wCDM$, etc.). 
+(e.g. flat $\Lambda$CDM, $w$CDM, etc.). 
 This is not the full picture though, since we must employ
 Bayes' Theorum in order to include any priors on our choice of 
 parameters and recover the posterior distribution function of our
@@ -349,7 +355,7 @@ parameters given our data
   P(\mathrm{cosmo}|\mu(z)) = P_{prior}(\mathrm{cosmo}) P(\mu(z)|\mathrm{cosmo}).
 \end{equation}
 %
-For this work we investigate a combination of priors. \Cosmosis is implemented
+For this work we investigate a combination of priors. \CosmoSIS is implemented
 in a way that requires the user to provide bounds on the parameter space, which we
 detail for each parameter in \autoref{tab:priors}
 Within those bounds, we investigated using a flat prior $P_{prior}=1$ and
