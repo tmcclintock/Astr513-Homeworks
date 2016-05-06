@@ -51,7 +51,9 @@ def execute(block,config):
     #Create a model for mu(z)
     dc = np.ones_like(z)
     for i in range(len(z)):
+        ## This looks wrong to me -- ELW
         dc[i] = 3000.0/h * integrate.quad(E_z,0,z[i],args=(om,ode,w))[0]
+        #dc[i] = 3000.0/h * integrate.quad(1./E_z,0,z[i],args=(om,ode,w))[0]
     dl = (1+z)*dc
     mu_model = 5*np.log10(dl)+25
 
