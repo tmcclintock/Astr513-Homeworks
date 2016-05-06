@@ -18,6 +18,8 @@ adot/a \propto E_z
 """
 def E_z(z,om,ode,w,ok=0):
     return np.sqrt(om*(1.0+z)**3+ok*(1.0+z)**2+ode*(1.0+z)**(3.0*(w+1)))
+def E_z_inv(z,om,ode,w,ok=0):
+    return 1./E_z(z,om,ode,w,ok)
 
 """
 The setup function runs only once at the start
@@ -53,7 +55,7 @@ def execute(block,config):
     for i in range(len(z)):
         ## This looks wrong to me -- ELW
         dc[i] = 3000.0/h * integrate.quad(E_z,0,z[i],args=(om,ode,w))[0]
-        #dc[i] = 3000.0/h * integrate.quad(1./E_z,0,z[i],args=(om,ode,w))[0]
+        #dc[i] = 3000.0/h * integrate.quad(E_z_inv,0,z[i],args=(om,ode,w))[0]
     dl = (1+z)*dc
     mu_model = 5*np.log10(dl)+25
 
