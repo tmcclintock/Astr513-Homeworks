@@ -4,12 +4,12 @@ from scipy import integrate
 
 #MODEL:
 om = 0.3
-h = 0.69
-w = -1.
+h = 0.5
+w = 0.0
 ode = 1. - om
 
 def E_z(z,om,ode,w,ok=0):
-    return np.sqrt(om*(1.0+z)**3.0+ok*(1.0+z)**2.0+ode*(1.0+z)**(3.0*(w+1.0)))
+    return 1./np.sqrt(om*(1.0+z)**3.0+ok*(1.0+z)**2.0+ode*(1.0+z)**(3.0*(w+1.0)))
 
 betoule = False
 rest = True
@@ -29,6 +29,8 @@ z,mu = data.T
 inds = np.argsort(z)
 z = z[inds]
 mu = mu[inds]
+plt.imshow(cov)
+plt.show()
 
 #Create a model for mu(z)
 dc = np.ones_like(z)
@@ -41,4 +43,5 @@ plt.errorbar(z,mu,yerr=errs,ls='',marker='.',alpha=0.5)
 plt.plot(z,mu_model)
 #plt.xscale('log')
 #plt.yscale('log')
+#plt.ylim([3,5])
 plt.show()
