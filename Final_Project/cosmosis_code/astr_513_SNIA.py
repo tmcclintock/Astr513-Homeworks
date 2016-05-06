@@ -20,6 +20,9 @@ def E_z(z,om,ode,w,ok=0):
     return np.sqrt(om*(1.0+z)**3+ok*(1.0+z)**2+ode*(1.0+z)**(3.0*(w+1)))
 def E_z_inv(z,om,ode,w,ok=0):
     return 1./E_z(z,om,ode,w,ok)
+def dc(h,z,om,ode,w,ok=0):
+    return 3000.0/h * integrate.quad(E_z_inv,0,z,args=(om,ode,w,ok))[0]
+dc = np.vectorize(dc)
 
 """
 The setup function runs only once at the start
@@ -51,19 +54,16 @@ def execute(block,config):
     ode = 1.0 - om #Omega_dark_energy
 
     #Create a model for mu(z)
-    dc = np.ones_like(z)
-    for i in range(len(z)):
+    #dc = np.ones_like(z)
+    #for i in range(len(z)):
         ## This looks wrong to me -- ELW
-        dc[i] = 3000.0/h * integrate.quad(E_z,0,z[i],args=(om,ode,w))[0]
+        #dc[i] = 3000.0/h * integrate.quad(E_z,0,z[i],args=(om,ode,w))[0]
         #dc[i] = 3000.0/h * integrate.quad(E_z_inv,0,z[i],args=(om,ode,w))[0]
-    dl = (1+z)*dc
+    dl = (1+z)*dc(z)
     mu_model = 5*np.log10(dl)+25
 
     #Calculate the likelihood
-    LL = 0.0
-    for i in range(len(cov)):
-        for j in range(len(cov[i])):
-            LL += -0.5 * (mu[i]-mu_model[i])*icov[i,j]*(mu[j]-mu_model[j])
+    LL = -0.5 np.dot(mu-mu_model,np.dot(icov,mu-mu_model))
     block[likes,"SNIA_LIKE"]=LL
 
     return 0 #Signal that it finished fine
