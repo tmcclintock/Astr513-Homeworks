@@ -327,14 +327,12 @@ and $h$. In both cosmologies, the universe is spatially flat
 Using the above model for the distance modulus allows us to write a
 probability that a model can generate our data:
 %
-%\begin{equation}
 \begin{align}
   \label{eq:likelihood}
   P(\mu(z)|\mathrm{cosmo}) &= \frac{1}{\sqrt{2\pi|\mathbf{C}|}}\nonumber \\
   &\qquad{}\exp\left[-\frac{1}{2} \sum_{i,j=0}^{N_{samples}}\left(\mu(z) - \mu_{\mathrm{model}}(z)\right)_i 
     \mathbf{C}^{-1}_{i,j}\left(\mu(z) - \mu_{\mathrm{model}}(z)\right)_j\right]
 \end{align}
-%\end{equation}
 %
 where $\mathbf{C}$ is the full covariance matrix between all of the $N_{samples}$ 
 in the data, and $\mathrm{cosmo}$ represents the cosmology that we are investigating
@@ -392,7 +390,7 @@ observed by the \Planck analysis, as seen in figure 3.
 \begin{figure}
   \label{fig:planck_corner}
   \centering
-  \includegraphics[width=0.8\linewidth]{figures/corner_example.eps}
+  \includegraphics[width=0.6\linewidth]{figures/corner_example.eps}
   \caption{\TM{THIS IS A PLACE HOLDER PLOT!}
     Posterior distributions of the cosmological parameter
     analysis using just the \Planck likelihood. Contours denote the
@@ -402,7 +400,6 @@ observed by the \Planck analysis, as seen in figure 3.
 
 \subsection{CosmoSIS}
 \label{sec:CosmoSIS}
-\LC{I'll write more later if need be.}
 \CosmoSIS is a framework that connects multiple existing codes as 
 modules in order to do cosmological parameter estimation. Users 
 can utilize existing codes or use their own codes for modules. For 
@@ -456,15 +453,17 @@ doing science rather than software development.
     Betoule et al. (no priors) & 0                      & 0     & 0     \\
     Rest et al.                & 0                      & 0     & 0     \\
     Rest et al. (no priors)    & 0                      & 0     & 0     \\
+    \Planck likelihood only    & 0                      & 0     & 0     \\
   \end{tabular}
   \caption {Posterior distirbutions of parameters in the
-    wCDM model. Uncertainties denote symmetrized 68\%
+    wCDM model for both data sets and the \Planck likelihood only. 
+    Uncertainties denote symmetrized 68\%
     confidence intervals maginalized over other parameters.}
 \end{table}
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.8\linewidth]{figures/betoule_wcdm_noprior_corner.eps}
+  \includegraphics[width=0.6\linewidth]{figures/betoule_wcdm_noprior_corner.eps}
   \caption{Posterior distributions of the cosmological parameters in the
     analysis of the \citet{Betoule2014} data without including the
     \Planck priors. Contours denote the
@@ -475,7 +474,7 @@ doing science rather than software development.
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.8\linewidth]{figures/betoule_wcdm_withprior_corner.eps}
+  \includegraphics[width=0.6\linewidth]{figures/betoule_wcdm_withprior_corner.eps}
   \caption{Posterior distributions of the cosmological parameters in the
     analysis of the \citet{Betoule2014} data including the
     \Planck priors. Contours denote the
