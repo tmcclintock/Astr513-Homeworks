@@ -321,23 +321,20 @@ equation of state. In $w$CDM, constraints are placed on $\Omega_M$, $w$,
 and $h$. In both cosmologies, the universe is spatially flat 
 ($\Omega_k = 0$) and thus $\Omega_{\Lambda}=1-\Omega_M$. 
 
-\subsection{CosmoSIS}
-\label{sec:CosmoSIS}
-\LC{I'll write more later if need be.}
-\CosmoSIS is a framework that connects multiple existing codes as modules in order to do cosmological parameter estimation. Users can utilize existing codes or use their own codes for modules. For our analysis, \CosmoSIS provides a convenient way to link together the Code for Anisotropies in the Microwave Background (CAMB), the \Planck likelihood code (our priors), and our {\sn} likelihood code in a pipeline. 
-
 
 \subsection{Likelihood}
 \label{sec:likelihood}
 Using the above model for the distance modulus allows us to write a
 probability that a model can generate our data:
 %
-\begin{eqnarray}
+%\begin{equation}
+\begin{align}
   \label{eq:likelihood}
-  P(\mu(z)|\mathrm{cosmo}) = \frac{1}{\sqrt{2\pi|\mathbf{C}|}}\exp
-  \left[-\frac{1}{2} \sum_{i,j=0}^{N_{samples}}\left(\mu(z) - \mu_{\mathrm{model}}(z)\right)_i 
+  P(\mu(z)|\mathrm{cosmo}) &= \frac{1}{\sqrt{2\pi|\mathbf{C}|}}\nonumber \\
+  &\qquad{}\exp\left[-\frac{1}{2} \sum_{i,j=0}^{N_{samples}}\left(\mu(z) - \mu_{\mathrm{model}}(z)\right)_i 
     \mathbf{C}^{-1}_{i,j}\left(\mu(z) - \mu_{\mathrm{model}}(z)\right)_j\right]
-\end{eqnarray}
+\end{align}
+%\end{equation}
 %
 where $\mathbf{C}$ is the full covariance matrix between all of the $N_{samples}$ 
 in the data, and $\mathrm{cosmo}$ represents the cosmology that we are investigating
@@ -376,24 +373,63 @@ Within those bounds, we investigated using a flat prior $P_{prior}=1$ and
 
 \subsection{Planck Priors}
 \label{sec:planck_priors}
-\TM{The only thing we really require is a corner plot of {\it just} the priors.}
+Our priors are given by the analysis of the \citet{planck2013} data set.
+However, instead of simply using the posterior mean and variance of
+the parameters from that analysis as priors in our project, we
+employed the full \Planck likelihood as a prior. That is,
+we first run the Code for Anisotropies in the Microwave Background (CAMB)
+in order to obtain the temperature power spectrum $\mathcal{D}_l^{TT}$
+and the polarization power spectrum $\mathcal{C}_l^{EE}$
+and feed it into the \Planck likelihood code\footnote{More information
+on the \Planck likelihood can be found here: 
+\url{https://wiki.cosmos.esa.int/planckpla2015/index.php/CMB_spectrum_\%26_Likelihood_Code}.}.
+The resulting likelihood
+is our prior, and it captures any degeneracies in parameter space
+observed by the \Planck analysis, as seen in figure 3.
+%\autoref{fig:planck_corner}
+\TM{The autoref isn't working here. If someone can figure it out put it back in.}
+
+\begin{figure}
+  \label{fig:planck_corner}
+  \centering
+  \includegraphics[width=0.8\linewidth]{figures/corner_example.eps}
+  \caption{\TM{THIS IS A PLACE HOLDER PLOT!}
+    Posterior distributions of the cosmological parameter
+    analysis using just the \Planck likelihood. Contours denote the
+    68\% and 95\% confidence projected areas; dashed lines in
+    the 1D histograms refer to the 68\% confidence intervals.}
+\end{figure}
+
+\subsection{CosmoSIS}
+\label{sec:CosmoSIS}
+\LC{I'll write more later if need be.}
+\CosmoSIS is a framework that connects multiple existing codes as 
+modules in order to do cosmological parameter estimation. Users 
+can utilize existing codes or use their own codes for modules. For 
+our analysis, \CosmoSIS provides a convenient way to link together 
+CAMB, the \Planck likelihood code (our priors), and our {\sn} likelihood 
+code in a single pipeline. This design choice minimized the significant
+time that would inevitably have been spent on connecting these 
+independently-made programs into one, allowing us to focus on 
+doing science rather than software development.
+
 
 \section{Results}
 \label{sec:results}
 \TM{Discuss the results and show the corner plots. Example plot included.
   We should have one corner plot without priors and one with priors.}
-\LC{Not sure where to put why we couldn't do the full analysis of Rest's data. 
-  I'm putting it here for now.}
-A complete analysis using the data from \citet{rest2014} is not done 
-in our paper since there are several issues with the publicly released 
-data. It is not apparent which uncertainties belonged to the statistical 
-covariance matrix since only the systematic covariance matrix is clearly 
-presented. Moreover, intrinsic dispersion of the data and photometric errors 
-of the distances depend on nuisance parameters in addition to the covariances 
-between the fit parameters. Fine-tuning nuisance parameters places a significant 
-time restraint on our work and is beyond the scope of this paper. For these reasons, 
-we only present the results for \citet{rest2014} that do not include the priors 
-from \citet{planck2013}. 
+%\LC{Not sure where to put why we couldn't do the full analysis of Rest's data. 
+%  I'm putting it here for now.}
+%A complete analysis using the data from \citet{rest2014} is not done 
+%in our paper since there are several issues with the publicly released 
+%data. It is not apparent which uncertainties belonged to the statistical 
+%covariance matrix since only the systematic covariance matrix is clearly 
+%presented. Moreover, intrinsic dispersion of the data and photometric errors 
+%of the distances depend on nuisance parameters in addition to the covariances 
+%between the fit parameters. Fine-tuning nuisance parameters places a significant 
+%time restraint on our work and is beyond the scope of this paper. For these reasons, 
+%we only present the results for \citet{rest2014} that do not include the priors 
+%from \citet{planck2013}. 
 
 \EW{Filler table for the lambda CDM fits}
 \begin{table}[h]
@@ -405,32 +441,49 @@ from \citet{planck2013}.
     Rest et al.                & 0      & 0 \\
     Rest et al. (no priors)    & 0      & 0 \\
     \end{tabular}
-    \caption {\label{tab:lcdm}$\Lambda$CDM best fit values}
+    \caption {\label{tab:lcdm}Posterior distirbutions of parameters in the
+      $\Lambda$CDM model. uncertainties denote symmetrized 68\%
+      confidence intervals maginalized over other parameters.}
 \end{table}
 
 \EW{Just a filler for the table for the wCDM fits}
 \begin{table}[h]
-   \centering
-    \begin{tabular}{l|ccc}
+  \label{tab:wcdm}
+  \centering
+  \begin{tabular}{l|ccc}
     ~                          & $\Omega_m$ & $h$ & $w$ \\ \hline
     Betoule et al.             & 0                      & 0     & 0     \\
     Betoule et al. (no priors) & 0                      & 0     & 0     \\
     Rest et al.                & 0                      & 0     & 0     \\
     Rest et al. (no priors)    & 0                      & 0     & 0     \\
-    \end{tabular}
-    \caption {\label{tab:wcdm}wCDM best fit values}
+  \end{tabular}
+  \caption {Posterior distirbutions of parameters in the
+    wCDM model. Uncertainties denote symmetrized 68\%
+    confidence intervals maginalized over other parameters.}
 \end{table}
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.8\linewidth]{figures/corner_example.eps}
-  \caption{\TM{THIS IS A PLACE HOLDER PLOT!}
-    Posterior distributions of the cosmological parameters in the
-    analysis of the \citet{Betoule2014} data. Contours denote the
+  \includegraphics[width=0.8\linewidth]{figures/betoule_wcdm_noprior_corner.eps}
+  \caption{Posterior distributions of the cosmological parameters in the
+    analysis of the \citet{Betoule2014} data without including the
+    \Planck priors. Contours denote the
     68\% and 95\% confidence projected areas; dashed lines in
     the 1D histograms refer to the 68\% confidence intervals.}
-  \label{fig:corner}
+  \label{fig:betoule_wcdm_noprior_corner}
 \end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\linewidth]{figures/betoule_wcdm_withprior_corner.eps}
+  \caption{Posterior distributions of the cosmological parameters in the
+    analysis of the \citet{Betoule2014} data including the
+    \Planck priors. Contours denote the
+    68\% and 95\% confidence projected areas; dashed lines in
+    the 1D histograms refer to the 68\% confidence intervals.}
+  \label{fig:betoule_wcdm_withprior_corner}
+\end{figure}
+
 
 \section{Conclusions}
 \label{sec:conclusions}
