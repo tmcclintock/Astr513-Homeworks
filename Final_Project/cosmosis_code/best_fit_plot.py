@@ -8,14 +8,14 @@ use latex. Uncomment the line plt.rc... and rerun to make the figures please.
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import integrate
-#plt.rc('text',usetex=True,fontsize=24)
+plt.rc('text',usetex=True,fontsize=24)
 
 def E_z(z,om,ode,w,ok=0):
     return 1./np.sqrt(om*(1.0+z)**3.0+ok*(1.0+z)**2.0+ode*(1.0+z)**(3.0*(w+1.0)))
 
 betoule = True
 rest = False
-prior = "withpriors/prior"
+prior = "withprior/prior"
 priorfigname = "withprior"
 modelname = "wcdm"
 

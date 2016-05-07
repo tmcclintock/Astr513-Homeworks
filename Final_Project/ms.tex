@@ -69,7 +69,7 @@ our analysis of comparing and combining {\sna} inference of cosmological paramet
 to those from other cosmological probes. In particular, we utilize the constraints 
 from the Cosmic Microwave Background (CMB) and the Baryonic Acoustic Oscillations 
 (BAO) that are gathered in \citet{planck2013}. We look at two cosmologies in our 
-analysis: the $\Lambda \textnormal{CDM}$ universe and the wCDM universe. This 
+analysis: the $\Lambda \textnormal{CDM}$ universe and the $w$CDM universe. This 
 paper is outlined as follows. In Section 2, the process and importance of {\snea} 
 are summarized. A short description of the \Planck mission is given in Section 3. 
 Section 4 describe the two {\sna} surveys whose data we use for our analysis. The 
@@ -383,20 +383,19 @@ on the \Planck likelihood can be found here:
 \url{https://wiki.cosmos.esa.int/planckpla2015/index.php/CMB_spectrum_\%26_Likelihood_Code}.}.
 The resulting likelihood
 is our prior, and it captures any degeneracies in parameter space
-observed by the \Planck analysis, as seen in figure 3.
-%\autoref{fig:planck_corner}
-\TM{The autoref isn't working here. If someone can figure it out put it back in.}
-
+observed by the \Planck analysis, as seen in \autoref{fig:planck_corner}. 
+%
 \begin{figure}
-  \label{fig:planck_corner}
   \centering
   \includegraphics[width=0.6\linewidth]{figures/corner_example.eps}
-  \caption{\TM{THIS IS A PLACE HOLDER PLOT!}
-    Posterior distributions of the cosmological parameter
+  \caption{Posterior distributions of the cosmological parameter
     analysis using just the \Planck likelihood. Contours denote the
     68\% and 95\% confidence projected areas; dashed lines in
     the 1D histograms refer to the 68\% confidence intervals.}
+  \label{fig:planck_corner}
+\TM{THIS IS A PLACE HOLDER PLOT!} 
 \end{figure}
+%
 
 \subsection{CosmoSIS}
 \label{sec:CosmoSIS}
@@ -404,7 +403,7 @@ observed by the \Planck analysis, as seen in figure 3.
 modules in order to do cosmological parameter estimation. Users 
 can utilize existing codes or use their own codes for modules. For 
 our analysis, \CosmoSIS provides a convenient way to link together 
-CAMB, the \Planck likelihood code (our priors), and our {\sn} likelihood 
+CAMB, the \Planck likelihood code (our priors), and our {\sna} likelihood 
 code in a single pipeline. This design choice minimized the significant
 time that would inevitably have been spent on connecting these 
 independently-made programs into one, allowing us to focus on 
@@ -463,10 +462,10 @@ doing science rather than software development.
   \centering
   \includegraphics[width=0.5\linewidth]{figures/betoule_wcdm_withprior_bestfit.eps}
   \caption{Best fit model of the \citet{betoule2014} data including the
-    \Planck priors for a wCDM model. Blue points are the data with
+    \Planck priors for a $w$CDM model. Blue points are the data with
     error bars corresponding to the diagonal of the provided covariance martrix.
     The solid black line is the most likely model from our MCMC chain.}
-  \label{fig:betoule_wcdm_noprior_bestfit}
+  \label{fig:betoule_wcdm_prior_bestfit}
 \end{figure}
 
 
