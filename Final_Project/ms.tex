@@ -253,23 +253,27 @@ The correlation matrix is calculated from the covariance matrix according to
 %
 Note that the correlation of a variable with itself is 1 by definition.
 The correlation matrices for both of our data sets can be seen below in
-figures \autoref{fig:cmatrix_betoule} and \autoref{fig:cmatrix_rest}.
+\autoref{fig:cmatrix_both}.
 %
 \begin{figure}
-  \includegraphics[width=0.8\linewidth]{figures/Betoule_correlation.eps}
+  \includegraphics[width=0.5\linewidth]{figures/Betoule_correlation.eps}
+  \includegraphics[width=0.5\linewidth]{figures/Rest_correlation.eps}
   \caption{Correlation matrix of $\mu_0(z)$ from the
-    \citet{betoule2014} sample. Overall very few correlations exist between
-    samples, likely due to the averaging over redshift bins.}
-  \label{fig:cmatrix_betoule}
-\end{figure}
-%
-\begin{figure}
-  \includegraphics[width=0.8\linewidth]{figures/Rest_correlation.eps}
-  \caption{Correlation matrix of $\mu_0(z)$ from the
-    \citet{rest2014} sample. Significant correlation exists between
-    different samples due to dependencies on systematic variables
+    \citet{betoule2014} sample on the left and \citet{rest2014} sample 
+    on the right. Very few correlations exist in \citet{betoule2014} likely 
+    due to the averaging over redshift bins. Significant correlation exists in 
+    \citet{rest2014} due to dependencies on systematic variables
     as seen in \autoref{eq:RestCovMatrix}.}
-  \label{fig:cmatrix_rest}
+%  \label{fig:cmatrix_betoule}
+%\end{figure}
+%
+%\begin{figure}
+%  \includegraphics[width=0.8\linewidth]{figures/Rest_correlation.eps}
+%  \caption{Correlation matrix of $\mu_0(z)$ from the
+%    \citet{rest2014} sample. Significant correlation exists between
+%    different samples due to dependencies on systematic variables
+%    as seen in \autoref{eq:RestCovMatrix}.}
+  \label{fig:cmatrix_both}
 \end{figure}
 
 \section{Distance Modulus Model}
@@ -387,7 +391,7 @@ observed by the \Planck analysis, as seen in \autoref{fig:planck_corner}.
 %
 \begin{figure}
   \centering
-  \includegraphics[width=0.6\linewidth]{figures/corner_example.eps}
+  \includegraphics[width=0.5\linewidth]{figures/corner_example.eps}
   \caption{Posterior distributions of the cosmological parameter
     analysis using just the \Planck likelihood. Contours denote the
     68\% and 95\% confidence projected areas; dashed lines in
@@ -434,10 +438,9 @@ doing science rather than software development.
     Rest et al.                & 0      & 0 \\
     Rest et al. (no priors)    & 0      & 0 \\
     \end{tabular}
-    \caption {\label{tab:lcdm}Posterior distirbutions of parameters in the
-      $\Lambda$CDM model. uncertainties denote symmetrized 68\%
-      confidence intervals maginalized over other parameters.
-      \EW{Filler table for the lambda CDM fits}}
+    \caption {\label{tab:lcdm}Posterior distributions of parameters in the
+      $\Lambda$CDM model. Uncertainties denote symmetrized 68\%
+      confidence intervals marginalized over other parameters.}
 \end{table}
 %
 \begin{table}[h]
@@ -451,13 +454,12 @@ doing science rather than software development.
     Rest et al. (no priors)    & 0                      & 0     & 0     \\
     \Planck likelihood only    & 0                      & 0     & 0     \\
   \end{tabular}
-  \caption {Posterior distirbutions of parameters in the
-    wCDM model for both data sets and the \Planck likelihood only. 
+  \caption {Posterior distributions of parameters in the
+    $w$CDM model for both data sets and the \Planck likelihood only. 
     Uncertainties denote symmetrized 68\%
-    confidence intervals maginalized over other parameters.
-    \EW{Just a filler for the table for the wCDM fits}}
+    confidence intervals marginalized over other parameters.}
 \end{table}
-
+%
 \begin{figure}
   \centering
   \includegraphics[width=0.5\linewidth]{figures/betoule_wcdm_withprior_bestfit.eps}
@@ -467,53 +469,29 @@ doing science rather than software development.
     The solid black line is the most likely model from our MCMC chain.}
   \label{fig:betoule_wcdm_prior_bestfit}
 \end{figure}
-
-
+%
 \begin{figure}
-  \centering
   \includegraphics[width=0.5\linewidth]{figures/betoule_wcdm_noprior_corner.eps}
+  \includegraphics[width=0.5\linewidth]{figures/betoule_wcdm_withprior_corner.eps}
   \caption{Posterior distributions of the cosmological parameters in the
-    analysis of the \citet{betoule2014} data without including the
-    \Planck priors for a wCDM model. Contours denote the
+    analysis of the \citet{betoule2014} data for a $w$CDM model. The left is without 
+    \Planck priors and the right is with \Planck priors. Contours denote the
     68\% and 95\% confidence projected areas; dashed lines in
     the 1D histograms refer to the 68\% confidence intervals.}
-  \label{fig:betoule_wcdm_noprior_corner}
+  \label{fig:betoule_wcdm_corner}
 \end{figure}
 %
 \begin{figure}
-  \centering
-  \includegraphics[width=0.5\linewidth]{figures/betoule_wcdm_withprior_corner.eps}
+  \includegraphics[width=0.5\linewidth]{figures/betoule_lcdm_noprior_corner.eps}
+  \includegraphics[width=0.5\linewidth]{figures/betoule_lcdm_withprior_corner.eps}
   \caption{Posterior distributions of the cosmological parameters in the
-    analysis of the \citet{betoule2014} data including the
-    \Planck priors for a wCDM model. Contours denote the
+    analysis of the \citet{betoule2014} data for a $\Lambda$CDM model. The left is without 
+    \Planck priors and the right is with \Planck priors. Contours denote the
     68\% and 95\% confidence projected areas; dashed lines in
     the 1D histograms refer to the 68\% confidence intervals.}
-  \label{fig:betoule_wcdm_withprior_corner}
+  \label{fig:betoule_lcdm_corner}
 \end{figure}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.6\linewidth]{figures/betoule_lcdm_noprior_corner.eps}
-  \caption{Posterior distributions of the cosmological parameters in the
-    analysis of the \citet{betoule2014} data without including the
-    \Planck priors for a $\Lambda$CDM model. Contours denote the
-    68\% and 95\% confidence projected areas; dashed lines in
-    the 1D histograms refer to the 68\% confidence intervals.}
-  \label{fig:betoule_lcdm_noprior_corner}
-\end{figure}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.6\linewidth]{figures/betoule_lcdm_withprior_corner.eps}
-  \caption{Posterior distributions of the cosmological parameters in the
-    analysis of the \citet{betoule2014} data including the
-    \Planck priors for a $\Lambda$CDM model. Contours denote the
-    68\% and 95\% confidence projected areas; dashed lines in
-    the 1D histograms refer to the 68\% confidence intervals.}
-  \label{fig:betoule_lcdm_withprior_corner}
-\end{figure}
-
-
+%
 
 \section{Conclusions}
 \label{sec:conclusions}
