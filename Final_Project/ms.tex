@@ -433,10 +433,10 @@ doing science rather than software development.
    \centering
     \begin{tabular}{l|cc}
     ~                          & $\Omega_m$ & $h$ \\ \hline
-    Betoule et al.             & 0      & 0 \\
-    Betoule et al. (no priors) & 0      & 0 \\
+    Betoule et al.             & $0.315 \pm 0.002$      & $0.665 \pm 0.002$ \\
+    Betoule et al. (no priors) & $0.30 \pm 0.03$      & $0.701 \pm 0.007$ \\
     Rest et al.                & 0      & 0 \\
-    Rest et al. (no priors)    & 0      & 0 \\
+    Rest et al. (no priors)    & $0.5 \pm 0.3$      & $0.68 \pm 0.07$ \\
     \end{tabular}
     \caption {\label{tab:lcdm}Posterior distributions of parameters in the
       $\Lambda$CDM model. Uncertainties denote symmetrized 68\%
@@ -448,11 +448,11 @@ doing science rather than software development.
   \centering
   \begin{tabular}{l|ccc}
     ~                          & $\Omega_m$ & $h$ & $w$ \\ \hline
-    Betoule et al.             & 0                      & 0     & 0     \\
-    Betoule et al. (no priors) & 0                      & 0     & 0     \\
-    Rest et al.                & 0                      & 0     & 0     \\
-    Rest et al. (no priors)    & 0                      & 0     & 0     \\
-    \Planck likelihood only    & 0                      & 0     & 0     \\
+    Betoule et al.             & $0.290 \pm 0.002$                      & $0.664 \pm 0.002$     & $-0.830 \pm 0.007$     \\
+    Betoule et al. (no priors) & $0.2 \pm 0.1$                      & $0.699 \pm 0.008$     & $-0.9 \pm 0.2$     \\
+    Rest et al.                & $0.4 \pm 0.3$                      & $0.68 \pm 0.06$     & $-1.1 \pm 0.6$     \\
+    Rest et al. (no priors)    & $0.5 \pm 0.3$                      & $0.68 \pm 0.07$    & $-0.4 \pm 0.5$     \\
+    \Planck likelihood only    & $0.295 \pm 0.003$                      & $0.658 \pm 0.002$     & $-0.827 \pm 0.007$     \\
   \end{tabular}
   \caption {Posterior distributions of parameters in the
     $w$CDM model for both data sets and the \Planck likelihood only. 
@@ -463,7 +463,8 @@ doing science rather than software development.
 \begin{figure}
   \centering
   \includegraphics[width=0.5\linewidth]{figures/betoule_wcdm_withprior_bestfit.eps}
-  \caption{Best fit model of the \citet{betoule2014} data including the
+  \includegraphics[width=0.5\linewidth]{figures/rest_wcdm_withprior_bestfit.eps}
+  \caption{Best fit model of the \citet{betoule2014} data (left) and \citet{rest2014} data (right) including the
     \Planck priors for a $w$CDM model. Blue points are the data with
     error bars corresponding to the diagonal of the provided covariance martrix.
     The solid black line is the most likely model from our MCMC chain.}
@@ -479,6 +480,21 @@ doing science rather than software development.
     68\% and 95\% confidence projected areas; dashed lines in
     the 1D histograms refer to the 68\% confidence intervals.}
   \label{fig:betoule_wcdm_corner}
+\end{figure}
+%
+\begin{figure}
+  \includegraphics[width=0.5\linewidth]{figures/rest_wcdm_noprior_corner.eps}
+  \includegraphics[width=0.5\linewidth]{figures/rest_wcdm_withpriors_corner.eps}
+  \caption{Same as ~\autoref{fig:betoule_wcdm_corner} but with the \citet{rest2014} data.}
+  \label{fig:rest_wcdm_corner}
+\end{figure}
+%
+\EW{Wasn't sure where to put the \Planck only corner plot}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/nosn_wcdm_corner.eps}
+  \caption{Same as ~\autoref{fig:betoule_wcdm_corner} and ~\autoref{fig:rest_wcdm_corner}, but using only \Planck likelihoods without \sn{} data.}
+  \label{fig:nosnia_wcdm_corner}
 \end{figure}
 %
 \begin{figure}
