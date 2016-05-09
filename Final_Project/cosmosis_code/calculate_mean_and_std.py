@@ -8,7 +8,7 @@ import numpy as np
 name = "rest"
 prior = "withprior/prior"
 priorfigname = "withprior"
-modelname = "lcdm"
+modelname = "wcdm"
 
 #Get the chain
 chainpath = "chains/%s/%s_stuff/%s_astr_513_chain.txt"%(modelname,name,prior)
