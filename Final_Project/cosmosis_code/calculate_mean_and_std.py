@@ -5,10 +5,10 @@ from the chains to report in the tables.
 
 import numpy as np
 
-name = "betoule"
-prior = "withpriors/prior"
+name = "rest"
+prior = "withprior/prior"
 priorfigname = "withprior"
-modelname = "wcdm"
+modelname = "lcdm"
 
 #Get the chain
 chainpath = "chains/%s/%s_stuff/%s_astr_513_chain.txt"%(modelname,name,prior)
