@@ -5,7 +5,7 @@ from the chains to report in the tables.
 
 import numpy as np
 
-name = "rest"
+name = "betoule"
 prior = "withprior/prior"
 priorfigname = "withprior"
 modelname = "wcdm"
