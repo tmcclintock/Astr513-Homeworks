@@ -68,9 +68,9 @@
 Type \rom{1}a supernovae (\snea{}) have been instrumental in the discovery 
 of the accelerating expansion of the universe. Presently, {\sn} surveys continue 
 to be pivotal in constraining cosmological parameters. In this paper, we present 
-our analysis of comparing and combining {\sna} inference of cosmological parameters 
+our analysis of comparing and combining {\sna} inferences of cosmological parameters 
 to those from other cosmological probes. In particular, we utilize the constraints 
-from the Cosmic Microwave Background (CMB) and the Baryonic Acoustic Oscillations 
+from the Cosmic Microwave Background (CMB) and Baryonic Acoustic Oscillations 
 (BAO) that are gathered in \citet{planck2013}. We look at two cosmologies in our 
 analysis: the $\Lambda \textnormal{CDM}$ universe and the $w$CDM universe. This 
 paper is outlined as follows. In Section 2, the process and importance of {\snea} 
@@ -99,8 +99,8 @@ which is enough to overcome the gravitational energy and the star explodes. Beca
 importantly, the light curves all have the same shape: a sharp maximum followed by a smooth, 
 gradual decay. Studying nearby \snea{} has shown that the rate of decline of the light curve 
 is correlated to the peak luminosity, and this correlation has been calibrated using Cephied 
-variable stars located in the same galaxies as nearby \sna{}. With this information, one can 
-estimate peak luminosity of an \sna{} from its light curve, thereby providing a 
+variable stars located in the same galaxies as nearby \snea{}. With this information, one can 
+estimate peak luminosity of a \sna{} from its light curve, thereby providing a 
 standard candle with which to measure distance. They were first used in this way in the 
 1990s by two independent teams, the Supernova Cosmology Project and the Cal\'{a}n/Tololo 
 Supernova Survey. It was using distances from \snea{} from these two projects that 
@@ -110,7 +110,7 @@ rate of the Universe in 1998.
 \section{Planck 2015 Results}
 \label{sec:planck}
 In 2009 the European Space Agency launched the \Planck satellite in order
-to measure the Cosmis Microwave Background with unparalleled precision.
+to measure the Cosmic Microwave Background with unparalleled precision.
 By measuring the small anisotropies in the temperature of the CMB across
 the entire sky one calculates the angular power spectrum, which can be
 modeled using first principles (see, e.g., \citet{dodelson2003}).
@@ -121,9 +121,10 @@ $\Omega_M$, $\Omega_\Lambda$ and $\Omega_k$, that we use in our
 {\sna} analysis. The only prior used by \citet{planck2013}
 on cosmological parameters was from the WMAP result \citep{wmap2011}
 for the optical depth $\tau$. We do not use this parameter
-in our {\sna} model.\citet{planck2013} report marginalized
+in our {\sna} model. \citet{planck2013} report marginalized
 posterior distributions for all parameters,
-which we report in Table~XXX.
+which we report in \autoref{tab:priors}.
+\EW{I'm assuming this should be the \Planck priors table?}
 
 \section{Data}
 \label{sec:data}
@@ -139,10 +140,9 @@ sample, a total of 740 \snea{} compiled from a combination of
 data from the Sloan Digital Sky 
 Survey (SDSS), the Supernova Legacy Survey (SNLS), the Hubble Space 
 Telescope (HST), and several other experiments. The 613 SDSS \snea{} 
-come from the SDSS supernova survey (SDSS-SNS) of SDSS-II \citep{sako2014} 
-with redshifts of $0.05 < z < 0.4$, and 374 of them are selected from those 
-that were confirmed in the spectroscopic follow-up. The rest of the 
-\sne{} come from the compilation by \citet{conley2011}, which includes 
+came from the SDSS supernova survey (SDSS-SNS) of SDSS-II \citep{sako2014} 
+with redshifts of $0.05 < z < 0.4$, and of these, 374 were selected from confirmed \sna{} in the spectroscopic follow-up. The rest of the 
+\sne{} came from the compilation by \citet{conley2011}, which includes 
 242 spectroscopically confirmed \snea{} from SNLS at redshifts $0.2 < z < 1$, 
 14 \snea{} from HST at very high redshifts of $0.7 < z < 1.4$, and 123 
 low redshift ($z < 0.08$) from a variety of sources. We made use of the 
@@ -169,10 +169,11 @@ Therefore, the data and covariance matrix are merely given at the
 
 \subsection{The Pan-STARRS1 sample}
 \label{sec:rest}
+\EW{Should we mention the issue with the covariance matrix in this section or the next? Or not at all?}
 \citet{rest2014} uses the first 1.5 year of the first telescope of 
 the Panoramic Survey Telescope and Rapid Response System (Pan-STARRS1) 
 and a compilation of low-redshift {\sna} studies. The low-redshift 
-sample consists of {\snea} collected by Calan/Tololo (Hamuy et al. 1996a), 
+sample consists of {\snea} collected by Cal\'{a}n/Tololo (Hamuy et al. 1996a), 
 CfA1 (Riess et al. 1999), CfA2 (Jha et al. 2006), CfA3 (Hicken et al. 2009a), 
 CSP (Contreras et al. 2010), and CfA4 (Hicken et al. 2012). After 
 three quality cuts, 113 spectroscopically confirmed {\snea} from 
@@ -181,7 +182,7 @@ low-redshift {\snea} are used for cosmological analysis.
 
 The publicly available data from \citet{rest2014} contains all light 
 curves, light curve fit information, covariance matrix, and each {\sn} 
-host information.\footnote{Data can be accessed at 
+host information\footnote{Data can be accessed at 
 \url{http://ipp0012.ifa.hawaii.edu/SN1aLC/}}. For our analysis, we 
 utilized the redshifts, distance moduli, and covariance matrix of the 
 final sample of 310 {\snea} or 335 light curves.
@@ -293,7 +294,7 @@ d_L(z; w, \Omega_M, \Omega_\Lambda, H_0)= (1+z)|\Omega_k|^{-1/2}\mathcal{S}_{k}\
 where $\Omega_k \equiv 1-\Omega_M-\Omega_{\Lambda}$. The function 
 $\mathcal{S}_{k}$ depends on the curvature density $\Omega_k$ in that 
 \[
-    \mathcal{S}_{k}= 
+    \mathcal{S}_{k}(x)= 
 \begin{cases}
     \text{sin}(x),&  \Omega_k < 0\\
     x,& \Omega_k = 0\\
@@ -316,8 +317,9 @@ universe, $w=-1$ and constraints are placed on $\Omega_M$ and $h$.
 The $w$CDM universe is a one-parameter extension of  $\Lambda$CDM 
 in which $w$ is an arbitrary parameter for a constant dark energy 
 equation of state. In $w$CDM, constraints are placed on $\Omega_M$, $w$, 
-and $h$. In both cosmologies, the universe is spatially flat 
+and $h$. In both cosmologies, we assume the universe is spatially flat 
 ($\Omega_k = 0$) and thus $\Omega_{\Lambda}=1-\Omega_M$. 
+\EW{Added \textbf{we assume} to the last sentence because $\Lambda$CDM and $w$CDM do not necessarily assume a spatially flat universe}
 
 
 \subsection{Likelihood}
@@ -345,11 +347,13 @@ parameters given our data
   P(\mathrm{cosmo}|\mu(z)) = P_{prior}(\mathrm{cosmo}) P(\mu(z)|\mathrm{cosmo}).
 \end{equation}
 %
+\EW{Is this equation missing the normalization constant?}
 For this work we investigate a combination of priors. \CosmoSIS is implemented
 in a way that requires the user to provide bounds on the parameter space, which we
 detail for each parameter in \autoref{tab:priors}.
 Within those bounds, we investigated using a flat prior $P_{prior}=1$ and
 \Planck priors.
+\EW{This last sentence is confusing to me...}
 
 \begin{table}
   \centering
@@ -413,7 +417,7 @@ The most likely values and uncertainties of $\Omega_M$ and $h$
 in a $\Lambda$CDM model are listed in \autoref{tab:lcdm}. Included are results from
 using the \citet{betoule2014} and \citet{rest2014} data with and without the addition 
 of \Planck priors. Additionally, the 68\% and 95\% confidence contours can be seen
-in \autoref{fig:betoule_lcdm_corner} and (Rest's corner plot if available). 
+in \autoref{fig:betoule_lcdm_corner} and \autoref{fig:rest_lcdm_corner}. 
 
 Similary, \autoref{tab:wcdm}, \autoref{fig:betoule_wcdm_corner}, and \autoref{fig:rest_wcdm_corner}
 detail the most likely values and confidence intervals of $\Omega_M$, $h$, and $w$ 
@@ -465,8 +469,7 @@ in a $w$CDM model. An extra entry is given in \autoref{tab:wcdm} for just our pr
     analysis of the \citet{rest2014} data for a $\Lambda$CDM model. Contours denote the
     68\% and 95\% confidence projected areas and dashed lines in
     the 1D histograms refer to the 68\% confidence intervals. {\it Left}: without 
-    \Planck priors. {\it Right}: with \Planck priors.
-  \TM{The figure on the right didn't appear in the repo. Please upload.}}
+    \Planck priors. {\it Right}: with \Planck priors.}
   \label{fig:rest_lcdm_corner}
 \end{figure}
 %
