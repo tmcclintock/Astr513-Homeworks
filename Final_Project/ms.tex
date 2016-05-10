@@ -123,8 +123,7 @@ on cosmological parameters was from the WMAP result \citep{wmap2011}
 for the optical depth $\tau$. We do not use this parameter
 in our {\sna} model. \citet{planck2013} report marginalized
 posterior distributions for all parameters,
-which we report in \autoref{tab:priors}.
-\EW{I'm assuming this should be the \Planck priors table?}
+which we report in \autoref{tab:wcdm}.
 
 \section{Data}
 \label{sec:data}
@@ -169,7 +168,6 @@ Therefore, the data and covariance matrix are merely given at the
 
 \subsection{The Pan-STARRS1 sample}
 \label{sec:rest}
-\EW{Should we mention the issue with the covariance matrix in this section or the next? Or not at all?}
 \citet{rest2014} uses the first 1.5 year of the first telescope of 
 the Panoramic Survey Telescope and Rapid Response System (Pan-STARRS1) 
 and a compilation of low-redshift {\sna} studies. The low-redshift 
@@ -256,7 +254,7 @@ The correlation matrix is calculated from the covariance matrix according to
 \end{equation}
 %
 Note that the correlation of a variable with itself is 1 by definition.
-The correlation matrices for both of our data sets can be seen below in
+The correlation matrices for both of our data sets can be seen in
 \autoref{fig:cmatrix_both}.
 %
 \begin{figure}
@@ -319,8 +317,6 @@ in which $w$ is an arbitrary parameter for a constant dark energy
 equation of state. In $w$CDM, constraints are placed on $\Omega_M$, $w$, 
 and $h$. In both cosmologies, we assume the universe is spatially flat 
 ($\Omega_k = 0$) and thus $\Omega_{\Lambda}=1-\Omega_M$. 
-\EW{Added \textbf{we assume} to the last sentence because $\Lambda$CDM and $w$CDM do not necessarily assume a spatially flat universe}
-
 
 \subsection{Likelihood}
 \label{sec:likelihood}
@@ -338,7 +334,7 @@ where $\mathbf{C}$ is the full covariance matrix between all of the $N_{samples}
 in the data, and $\mathrm{cosmo}$ represents the cosmology that we are investigating
 (e.g. flat $\Lambda$CDM, $w$CDM, etc.). 
 This is not the full picture though, since we must employ
-Bayes' Theorum in order to include any priors on our choice of 
+Bayes' Theorem in order to include any priors on our choice of 
 parameters and recover the posterior distribution function of our
 parameters given our data
 %
@@ -347,10 +343,6 @@ parameters given our data
   P(\mathrm{cosmo}|\mu(z)) = P_{prior}(\mathrm{cosmo}) P(\mu(z)|\mathrm{cosmo}).
 \end{equation}
 %
-\EW{Is this equation missing the normalization constant?}
-\TM{No it is general. The equation before is normalized properly, and this one 
-  doesn't specify the prior, so it is normalized in that the prior hasn't been
-  specified yet.}
 For this work we investigate a combination of priors. \CosmoSIS is implemented
 in a way that requires the user to provide bounds on the parameter space, which we
 detail for each parameter in \autoref{tab:priors}.
@@ -359,18 +351,18 @@ all parameters simultaneous in addition to \Planck priors on all parameters.
 
 \begin{table}
   \centering
-  \caption{Bounds on cosmological parameters 
-    entering \autoref{eq:posterior}. Our sampler requires
-    bounds in order to both populate the parameter space with
-    parallelized samplers and to calculate an appropriate width
-    for the step size.}
-  \label{tab:priors}
   \begin{tabular}{lll}
     Parameter & Description & Bounds \\ \hline
     $h$ & Hubble constant$/100$ & $[0,2]$ \\
     $\Omega_M$ & Matter fraction at $z=0$ & $[0,1]$ \\
     $w$ & Dark energy E.O.S. & $[-2,0]$\\
   \end{tabular}
+  \caption{Bounds on cosmological parameters 
+    entering \autoref{eq:posterior}. Our sampler requires
+    bounds in order to both populate the parameter space with
+    parallelized samplers and to calculate an appropriate width
+    for the step size.}
+  \label{tab:priors}
 \end{table}
 
 \subsection{Planck Priors}
@@ -419,30 +411,27 @@ The most likely values and uncertainties of $\Omega_M$ and $h$
 in a $\Lambda$CDM model are listed in \autoref{tab:lcdm}. Included are results from
 using the \citet{betoule2014} and \citet{rest2014} data with and without the addition 
 of \Planck priors. Additionally, the 68\% and 95\% confidence contours can be seen
-in \autoref{fig:betoule_lcdm_corner} and \autoref{fig:rest_lcdm_corner}. 
-
-Similary, \autoref{tab:wcdm}, \autoref{fig:betoule_wcdm_corner}, and \autoref{fig:rest_wcdm_corner}
+in \autoref{fig:betoule_lcdm_corner} and \autoref{fig:rest_lcdm_corner}. Similary, \autoref{tab:wcdm}, 
+\autoref{fig:betoule_wcdm_corner}, and \autoref{fig:rest_wcdm_corner}
 detail the most likely values and confidence intervals of $\Omega_M$, $h$, and $w$ 
-in a $w$CDM model. An extra entry is given in \autoref{tab:wcdm} for just our prior, the 
-\Planck likelihood. 
-\LC{Not done yet}
+in a $w$CDM model. An extra entry is given in \autoref{tab:wcdm} for just the 
+\Planck likelihood. The best distance modulus fits to the \citet{betoule2014} and \citet{rest2014} data
+from our MCMC chains for a $w$CDM model with \Planck priors are shown in \autoref{fig:wcdm_prior_bestfit}. 
 
-%\LC{Not sure where to put why we couldn't do the full analysis of Rest's data. 
-%  I'm putting it here for now.}
-%A complete analysis using the data from \citet{rest2014} is not done 
-%in our paper since there are several issues with the publicly released 
-%data. It is not apparent which uncertainties belonged to the statistical 
-%covariance matrix since only the systematic covariance matrix is clearly 
-%presented. Moreover, intrinsic dispersion of the data and photometric errors 
-%of the distances depend on nuisance parameters in addition to the covariances 
-%between the fit parameters. Fine-tuning nuisance parameters places a significant 
-%time restraint on our work and is beyond the scope of this paper. For these reasons, 
-%we only present the results for \citet{rest2014} that do not include the priors 
-%from \citet{planck2013}. 
+A complete analysis using the data from \citet{rest2014} reveals  
+several issues with their publicly released data. It is not apparent 
+which uncertainties belonged to the statistical covariance matrix since 
+only the systematic covariance matrix is clearly labeled in the released data. Moreover, intrinsic 
+dispersion of the data and photometric errors of the distances depend on nuisance 
+parameters in addition to the covariances between the fit parameters. Fine-tuning 
+nuisance parameters is omitted by us since it places a significant time restraint on our work. Due to 
+these issues, most of the values and contours calculated with the \citet{rest2014} data without 
+\Planck priors do not give reasonable results. 
+%
 \begin{table}[h]
    \centering
     \begin{tabular}{l|cc}
-    ~                          & $\Omega_m$ & $h$ \\ \hline
+    ~                          & $\Omega_M$ & $h$ \\ \hline
     Betoule et al.             & $0.315 \pm 0.002$      & $0.665 \pm 0.002$ \\
     Betoule et al. (no priors) & $0.30 \pm 0.03$      & $0.701 \pm 0.007$ \\
     Rest et al.                & $0.322 \pm 0.003$      & $0.659 \pm 0.002$ \\
@@ -478,7 +467,7 @@ in a $w$CDM model. An extra entry is given in \autoref{tab:wcdm} for just our pr
 \begin{table}[h]
   \centering
   \begin{tabular}{l|ccc}
-    ~                          & $\Omega_m$ & $h$ & $w$ \\ \hline
+    ~                          & $\Omega_M$ & $h$ & $w$ \\ \hline
     Betoule et al.             & $0.290 \pm 0.002$                      & $0.664 \pm 0.002$     & $-0.830 \pm 0.007$     \\
     Betoule et al. (no priors) & $0.2 \pm 0.1$                      & $0.699 \pm 0.008$     & $-0.9 \pm 0.2$     \\
     Rest et al.                & $0.295 \pm 0.003$                      & $0.658 \pm 0.002$     & $-0.827 \pm 0.007$     \\
@@ -523,13 +512,28 @@ in a $w$CDM model. An extra entry is given in \autoref{tab:wcdm} for just our pr
      with \Planck priors. Blue points are the data with error bars corresponding 
      to the diagonal of the provided covariance martrix. The solid black line is 
      the most likely model from our MCMC chain.}
-  \label{fig:betoule_wcdm_prior_bestfit}
+  \label{fig:wcdm_prior_bestfit}
 \end{figure}
 
 \section{Conclusions}
 \label{sec:conclusions}
-\TM{Talk about how the inclusions if priors changes the analysis.
-  State whether the priors are strong or uninformative.}
+\LC{Not sure if I should say anything more about \autoref {fig:wcdm_prior_bestfit} here.}
+As seen in \autoref{tab:lcdm} and \autoref{fig:betoule_lcdm_corner}, the addition of the \Planck priors
+to the \citet{betoule2014} data tightens the constraints on $\Omega_M$ and $h$ in a $\Lambda$CDM model. 
+Moreover, the \Planck priors vastly improve the constraint on $\Omega_M$ despite the issues in \citet{rest2014} data
+as demonstrated in \autoref{fig:rest_lcdm_corner}. 
+
+Comparably, the inclusion of the \Planck priors to the \citet{betoule2014} data also tighten the 
+constraints on $\Omega_M$, $h$, and $w$ in a $w$CDM model as seen in \autoref{tab:wcdm} and  
+\autoref{fig:betoule_wcdm_corner}. This also applies to the \citet{rest2014} data as illustrated 
+in \autoref{fig:rest_wcdm_corner}, where $\Omega_M$ and $w$ are well constrained compared to the case with a flat prior. 
+The confidence contours and most likely values are nearly identical to the ones from the \Planck likelihood. 
+
+We remind the readers that \citet{planck2013} accounts for nuisance and cosmological
+parameters unlike our analysis of the \citet{betoule2014} and \citet{rest2014} data, which disregards 
+nuisance parameters. Nonetheless, we conclude that the inclusion of information from other cosmological 
+probes as priors strengthens {\sna} inferences of cosmological parameters. Furthermore, \Planck priors prove
+to be informative especially in the case of problematic data. 
 
 \bibliography{msbib}
 
